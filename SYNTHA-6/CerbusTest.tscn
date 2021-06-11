@@ -1,11 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Actors/SoloCerberus.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actors/Cerberus.tscn" type="PackedScene" id=2]
+[ext_resource path="res://cerberus_controller.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Jack" parent="." instance=ExtResource( 1 )]
 position = Vector2( 149.586, 52.6758 )
 action_to_enable_control = "jack_enable"
 max_speed = 640.0
 acceleration = 10.0
+
+[node name="Kahuna" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 203.464, 111.685 )
+action_to_enable_control = "kahuna_enable"
+max_speed = 640.0
+acceleration = 10.0
+
+[node name="Laguna" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0, 1, 0.254902, 1 )
+position = Vector2( 267.605, 66.7868 )
+action_to_enable_control = "laguna_enable"
+max_speed = 640.0
+acceleration = 10.0
+
+[node name="Cerberus" parent="." instance=ExtResource( 2 )]
+needs_action_to_enable_control = false
