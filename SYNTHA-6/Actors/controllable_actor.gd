@@ -33,8 +33,8 @@ func _physics_process(delta):
 		hinput = 0
 		vinput = 0
 	var target_velocity = Vector2(hinput, vinput) * max_speed
-	velocity = velocity.linear_interpolate(target_velocity, acceleration * delta)
-	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI/4, false)
+	move_velocity = move_velocity.linear_interpolate(target_velocity, acceleration * delta)
+	velocity = move_and_slide(move_velocity + attraction_velocity, Vector2.UP, false, 4, PI/4, false)
 	
 	#push objects
 	for index in get_slide_count():
