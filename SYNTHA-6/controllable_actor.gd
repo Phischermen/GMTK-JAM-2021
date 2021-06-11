@@ -4,6 +4,8 @@ export var action_to_enable_control:String = ""
 export var max_speed = 64.0
 export var acceleration = 6.0
 
+export (int, 0, 200) var push = 100
+
 var velocity:Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -28,4 +30,10 @@ func _physics_process(delta):
 		vinput = 0
 	var target_velocity = Vector2(hinput, vinput) * max_speed
 	velocity = velocity.linear_interpolate(target_velocity, acceleration * delta)
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI/4, false)
+	
+	#push objects
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		collision.collider.apply_central_impulse(-collision.normal * push)
+
