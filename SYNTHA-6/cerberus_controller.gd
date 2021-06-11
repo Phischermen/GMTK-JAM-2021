@@ -9,6 +9,7 @@ onready var cerberus = $Cerberus
 
 var cerberus_joined = true
 
+export var cerberus_join_distance = 40
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -30,9 +31,25 @@ func _process(delta):
 			for c in solo_cerberus:
 				average_position += c.global_position
 			average_position /= 3
+			var one_cerbus_is_not_close_enough = false
 			for c in solo_cerberus:
 				var target_velocity = c.max_converge_speed * (c.position - average_position).normalized()
 				c.attraction_velocity = c.attraction_velocity.linear_interpolate(target_velocity, c.acceleration * delta)
-				
+				if c.global_position.distance_to(average_position) > cerberus_join_distance:
+					one_cerbus_is_not_close_enough = true
+			if one_cerbus_is_not_close_enough == false:
+				join_cerberus()
 			
 	pass
+
+
+func join_cerberus():
+	for c in solo_cerberus:
+		remove_child(c)
+	add_child(cerberus)
+
+
+func split_cerberus():
+	for c in solo_cerberus:
+		add_child(c)
+	remove_child(cerberus)
