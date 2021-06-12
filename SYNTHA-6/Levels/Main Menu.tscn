@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://ArtAssests/UI & Menu Art/EscapeFromTheWashBasin_Title_V2.png" type="Texture" id=1]
 [ext_resource path="res://Temp Assets (Delete Later)/hover button.png" type="Texture" id=2]
 [ext_resource path="res://Temp Assets (Delete Later)/start button.png" type="Texture" id=3]
 [ext_resource path="res://Temp Assets (Delete Later)/level button.png" type="Texture" id=4]
@@ -18,20 +18,19 @@ __meta__ = {
 }
 
 [node name="TitleArt" type="TextureRect" parent="."]
-margin_left = 501.451
-margin_top = 51.9695
-margin_right = 584.451
-margin_bottom = 115.97
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.53, 0.54 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MenuContainer" type="VBoxContainer" parent="."]
-margin_left = 412.861
-margin_top = 172.881
-margin_right = 889.861
-margin_bottom = 655.881
+margin_left = 695.083
+margin_top = 324.072
+margin_right = 1180.08
+margin_bottom = 677.335
 rect_scale = Vector2( 0.56, 0.64 )
 __meta__ = {
 "_edit_use_anchors_": false
