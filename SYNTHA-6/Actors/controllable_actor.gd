@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends "res://Actors/actor.gd"
 
 var control_enabled = true
 export var control_always_enabled = true

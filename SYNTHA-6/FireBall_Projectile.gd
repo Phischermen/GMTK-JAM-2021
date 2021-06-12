@@ -24,7 +24,7 @@ func launch(direction):
 	# Detatch the fireball from player so they're not connected.
 	#get_parent().remove_child(self)
 	#scene.add_child(self)
-	velocity = SHOOT_VELOCITY * Vector2(direction, 1)
+	velocity = SHOOT_VELOCITY * Vector2(direction)
 	set_physics_process(true)
 
 func _on_impact(normal : Vector2):
