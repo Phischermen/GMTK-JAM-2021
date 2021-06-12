@@ -31,6 +31,7 @@ func _ready():
 	camera_controller.laguna = laguna
 	camera_controller.solo_cerberus = solo_cerberus
 	camera_controller.cerberus = cerberus
+	
 	# Initialize health
 	health_counter.set_max_health(health)
 	# Initialize joined
@@ -121,4 +122,4 @@ func update_health(damage, knockback, _iframes):
 
 func set_cerberus_joined(value):
 	cerberus_joined = value
-	
+	camera_controller.merged = value
