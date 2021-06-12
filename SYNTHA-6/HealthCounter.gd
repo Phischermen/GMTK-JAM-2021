@@ -1,6 +1,8 @@
 extends Control
 
 
+onready var heart = $HBoxContainer/Heart1.duplicate()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var amount = 5
@@ -10,6 +12,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func set_max_health(amount):
+	for child in $HBoxContainer.get_children():
+		child.queue_free()
+	for i in range(amount):
+		$HBoxContainer.add_child(heart.duplicate())
 
 
 func set_health(amount):
