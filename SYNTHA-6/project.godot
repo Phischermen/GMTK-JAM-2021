@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="SYNTHA-6"
-run/main_scene="res://Levels/Gameplay_Level 2.tscn"
+run/main_scene="res://Levels/Gameplay_Level 3.tscn"
 config/icon="res://icon.png"
 
 [display]
