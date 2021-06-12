@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://ArtAssests/UI & Menu Art/EscapeFromTheWashBasin_Title_V2.png" type="Texture" id=1]
+[ext_resource path="res://Temp Assets (Delete Later)/hover button.png" type="Texture" id=2]
+[ext_resource path="res://Temp Assets (Delete Later)/start button.png" type="Texture" id=3]
+[ext_resource path="res://Temp Assets (Delete Later)/level button.png" type="Texture" id=4]
+[ext_resource path="res://Temp Assets (Delete Later)/quit button.png" type="Texture" id=5]
+[ext_resource path="res://Temp Assets (Delete Later)/credit button.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/Main Menu.gd" type="Script" id=7]
+[ext_resource path="res://Levels/LevelButton.gd" type="Script" id=8]
+[ext_resource path="res://Levels/StartButton.gd" type="Script" id=9]
+[ext_resource path="res://Levels/CreditButton.gd" type="Script" id=10]
+[ext_resource path="res://Levels/QuitButton.gd" type="Script" id=11]
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleArt" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.53, 0.54 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuContainer" type="VBoxContainer" parent="."]
+margin_left = 695.083
+margin_top = 324.072
+margin_right = 1180.08
+margin_bottom = 677.335
+rect_scale = Vector2( 0.56, 0.64 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="TextureButton" parent="MenuContainer"]
+margin_right = 485.0
+margin_bottom = 84.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+script = ExtResource( 9 )
+
+[node name="LevelButton" type="TextureButton" parent="MenuContainer"]
+margin_top = 88.0
+margin_right = 485.0
+margin_bottom = 172.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 2 )
+script = ExtResource( 8 )
+
+[node name="CreditButton" type="TextureButton" parent="MenuContainer"]
+margin_top = 176.0
+margin_right = 485.0
+margin_bottom = 260.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 2 )
+script = ExtResource( 10 )
+
+[node name="QuitButton" type="TextureButton" parent="MenuContainer"]
+margin_top = 264.0
+margin_right = 485.0
+margin_bottom = 348.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 2 )
+script = ExtResource( 11 )
+
+[connection signal="pressed" from="MenuContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="MenuContainer/LevelButton" to="." method="_on_LevelButton_pressed"]
+[connection signal="pressed" from="MenuContainer/CreditButton" to="." method="_on_CreditButton_pressed"]
+[connection signal="pressed" from="MenuContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
