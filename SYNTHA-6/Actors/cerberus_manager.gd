@@ -93,9 +93,9 @@ func join_cerberus(position):
 func split_cerberus(position):
 	for c in solo_cerberus:
 		add_child(c)
-	kahuna.position = position
-	jack.position = position + Vector2.UP
-	laguna.position = position + Vector2.DOWN
+	kahuna.position = position + Vector2(40, 0)
+	jack.position = position + Vector2(-40, 40)
+	laguna.position = position + Vector2(-40, -40)
 	remove_child(cerberus)
 	cerberus_joined = false
 	cerberus_has_joined_and_player_has_not_released_join_button = true
