@@ -1,10 +1,8 @@
 extends "res://Actors/controllable_actor.gd"
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+export var underground_texture : Texture
+onready var sprite = $Sprite
+onready var original_texture = $Sprite.texture
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,5 +10,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+func _process(delta):
+	# Dig underground when we use the ability button.
+	if Input.is_action_just_pressed("ability_button"):
+		# If already underground, revert back to surface.
+		if sprite.texture == underground_texture:
+			sprite.texture = original_texture
+		# Go underground.
+		else:
+			sprite.texture = underground_texture
 #	pass

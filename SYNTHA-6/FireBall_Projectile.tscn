@@ -9,6 +9,8 @@ radius = 5.79236
 
 [node name="Fireball" type="KinematicBody2D"]
 position = Vector2( 98.4445, 37.0418 )
+collision_layer = 8
+collision_mask = 17
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
