@@ -30,7 +30,10 @@ func _ready():
 		remove_child(c)
 	for d in get_tree().get_nodes_in_group("Dog"):
 		d.connect("took_damage", self, "update_health")
-	pass # Replace with function body.
+	# Setup controls that disable cerbus
+	jack.actions_that_enable_control_for_other_dogs = [jack.action_to_enable_control, laguna.action_to_enable_control, kahuna.action_to_enable_control]
+	laguna.actions_that_enable_control_for_other_dogs = jack.actions_that_enable_control_for_other_dogs
+	kahuna.actions_that_enable_control_for_other_dogs = jack.actions_that_enable_control_for_other_dogs
 
 
 func _process(delta):
