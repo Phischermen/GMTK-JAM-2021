@@ -16,7 +16,6 @@ var state = State.MOVING
 
 var dogs = []
 
-var distance = 100000
 
 
 func _physics_process(delta):
