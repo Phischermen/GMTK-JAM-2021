@@ -9,27 +9,27 @@ cerberus_join_distance = 70
 dog_distance_from_split_origin = 64
 
 [node name="Jack" parent="." instance=ExtResource( 4 )]
-position = Vector2( -37.0659, -22.5925 )
-action_to_enable_control = "jack_enable"
+position = Vector2( 102.605, -31.232 )
+action_to_disable_control = "jack_enable"
 max_speed = 640.0
 acceleration = 10.0
 
 [node name="Kahuna" parent="." instance=ExtResource( 4 )]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( -4.60295, 31.77 )
-action_to_enable_control = "kahuna_enable"
+position = Vector2( 135.068, 23.1305 )
+action_to_disable_control = "kahuna_enable"
 max_speed = 640.0
 acceleration = 10.0
 
 [node name="Laguna" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0, 1, 0.254902, 1 )
-position = Vector2( 32.466, -22.2196 )
-action_to_enable_control = "laguna_enable"
+position = Vector2( 172.137, -30.8591 )
+action_to_disable_control = "laguna_enable"
 max_speed = 640.0
 acceleration = 10.0
 
 [node name="Cerberus" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0, 0.854902, 1, 1 )
 scale = Vector2( 2, 2 )
-needs_action_to_enable_control = false
+needs_action_to_disable_control = false
 max_speed = 640.0

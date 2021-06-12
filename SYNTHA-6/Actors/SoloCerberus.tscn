@@ -17,3 +17,13 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -3.91885
+margin_top = -48.8799
+margin_right = 3.08115
+margin_bottom = -34.8799
+text = "L"
+__meta__ = {
+"_edit_use_anchors_": false
+}
