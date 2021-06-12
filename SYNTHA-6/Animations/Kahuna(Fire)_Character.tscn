@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ArtAssests/characterSprites/cerberus/fire_spriteSheet.png" type="Texture" id=1]
+[ext_resource path="res://Animations/Kahuna(Fire)_Idle.tres" type="Animation" id=2]
+[ext_resource path="res://Animations/Kahuna(Fire)_Run.tres" type="Animation" id=3]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 4
+vframes = 4
+frame = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/Kahuna(Fire)_Idle = ExtResource( 2 )
+anims/Kahuna(Fire)_Run = ExtResource( 3 )
