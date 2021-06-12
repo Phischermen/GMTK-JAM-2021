@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://HealthCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Actors/jack.gd" type="Script" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://Actors/SoloCerberus.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Actors/laguna.gd" type="Script" id=5]
 [ext_resource path="res://Actors/kahuna.gd" type="Script" id=6]
+[ext_resource path="res://FireBall_Projectile.tscn" type="PackedScene" id=7]
 
 [node name="CerberusManager" type="Node2D"]
+position = Vector2( 348.68, 250.142 )
 script = ExtResource( 3 )
 cerberus_join_distance = 70
 dog_distance_from_split_origin = 64
@@ -26,6 +28,7 @@ control_always_enabled = false
 action_to_enable_control = "kahuna_enable"
 max_speed = 640.0
 max_converge_speed = 640.0
+fireball_Scene = ExtResource( 7 )
 
 [node name="Laguna" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0, 1, 0.254902, 1 )

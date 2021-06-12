@@ -1,14 +1,52 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://temp_cerberus.png" type="Texture" id=1]
 [ext_resource path="res://Actors/controllable_actor.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 30.9951
+radius = 39.5589
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 17.0496
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 7.42602
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 3.7995
+height = 16.902
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 4.38545
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 4.9165
+height = 3.41002
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 3.02661
+height = 12.2295
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 4.02232
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 10.7841
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 8.70171
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 7.75134
+height = 13.4894
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 7.12803
 
 [node name="Jack" type="KinematicBody2D" groups=[
 "Dog",
 ]]
+position = Vector2( 161.635, 116.736 )
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 2 )
@@ -18,8 +56,25 @@ max_converge_speed = 680.0
 scale = Vector2( 0.426429, 0.426429 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShapeBody" type="CollisionShape2D" parent="."]
+position = Vector2( -13.4695, 10.6634 )
 shape = SubResource( 1 )
+
+[node name="CollisionShapeHip" type="CollisionShape2D" parent="."]
+position = Vector2( -57.3981, 45.7183 )
+shape = SubResource( 2 )
+
+[node name="CollisionShapeHindLegR" type="CollisionShape2D" parent="."]
+position = Vector2( -63.2814, 67.042 )
+shape = SubResource( 3 )
+
+[node name="CollisionShapeHindShinR" type="CollisionShape2D" parent="."]
+position = Vector2( -74.0825, 84.7459 )
+shape = SubResource( 4 )
+
+[node name="CollisionShapeFootR" type="CollisionShape2D" parent="."]
+position = Vector2( -68.1896, 94.2868 )
+shape = SubResource( 5 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -3.91885
@@ -30,3 +85,32 @@ text = "L"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CollisionShapeHindLegL" type="CollisionShape2D" parent="."]
+position = Vector2( -41.5774, 63.311 )
+shape = SubResource( 6 )
+
+[node name="CollisionShapeHindShinL" type="CollisionShape2D" parent="."]
+position = Vector2( -47.247, 79.375 )
+shape = SubResource( 7 )
+
+[node name="CollisionShapeFootL" type="CollisionShape2D" parent="."]
+position = Vector2( -45.0422, 85.9896 )
+shape = SubResource( 8 )
+
+[node name="CollisionShapeFrontLegR" type="CollisionShape2D" parent="."]
+position = Vector2( -21.7336, 67.7207 )
+rotation = -0.207694
+shape = SubResource( 9 )
+
+[node name="CollisionShapeFrontPawR" type="CollisionShape2D" parent="."]
+position = Vector2( -13.8591, 91.0293 )
+shape = SubResource( 10 )
+
+[node name="CollisionShapeFrontLegL" type="CollisionShape2D" parent="."]
+position = Vector2( 1.88988, 57.6414 )
+shape = SubResource( 11 )
+
+[node name="CollisionShapeFrontPawL" type="CollisionShape2D" parent="."]
+position = Vector2( 8.81946, 74.3354 )
+shape = SubResource( 12 )
