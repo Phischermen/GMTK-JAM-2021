@@ -17,7 +17,6 @@ dog_distance_from_split_origin = 64
 [node name="Jack" parent="." instance=ExtResource( 4 )]
 script = ExtResource( 2 )
 control_always_enabled = false
-action_to_enable_control = "jack_enable"
 max_speed = 640.0
 max_converge_speed = 640.0
 
@@ -25,7 +24,6 @@ max_converge_speed = 640.0
 modulate = Color( 1, 0, 0, 1 )
 script = ExtResource( 6 )
 control_always_enabled = false
-action_to_enable_control = "kahuna_enable"
 max_speed = 640.0
 max_converge_speed = 640.0
 fireball_Scene = ExtResource( 7 )
@@ -34,7 +32,6 @@ fireball_Scene = ExtResource( 7 )
 modulate = Color( 0, 1, 0.254902, 1 )
 script = ExtResource( 5 )
 control_always_enabled = false
-action_to_enable_control = "laguna_enable"
 max_speed = 640.0
 max_converge_speed = 640.0
 
