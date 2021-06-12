@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://VFX/Lava_Shader.tres" type="Shader" id=1]
+[ext_resource path="res://Lava.png" type="Texture" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=3]
+material = SubResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource( 1 )
+scale = Vector2( 50, 50 )
+mesh = SubResource( 3 )
+texture = ExtResource( 2 )
