@@ -36,7 +36,6 @@ max_speed = 640.0
 max_converge_speed = 640.0
 
 [node name="Cerberus" parent="." instance=ExtResource( 4 )]
-modulate = Color( 0, 0.854902, 1, 1 )
 scale = Vector2( 2, 2 )
 max_speed = 640.0
 push = 200
