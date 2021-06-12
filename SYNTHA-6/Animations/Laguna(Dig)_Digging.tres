@@ -2,7 +2,8 @@
 
 [resource]
 resource_name = "Laguna(Dig)_Digging"
-length = 0.5
+length = 0.65
+step = 0.15
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -10,8 +11,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
-"transitions": PoolRealArray( 1, 1.03526, 1, 1 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6 ),
+"transitions": PoolRealArray( 1, 1.03526, 1, 1, 1 ),
 "update": 1,
-"values": [ 8, 9, 10, 12 ]
+"values": [ 0, 8, 9, 10, 12 ]
 }
