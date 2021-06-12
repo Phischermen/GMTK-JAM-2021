@@ -1,42 +1,39 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=4 format=2]
 
 [sub_resource type="Curve" id=1]
 min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=2]
-curve = SubResource( 1 )
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0.0394737, 0.973864 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.282955 ), -7.59999, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=3]
 colors = PoolColorArray( 0.972168, 0.797404, 0.421526, 1, 1, 0.28125, 0.28125, 1 )
 
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
-
-[sub_resource type="Curve" id=6]
-_data = [ Vector2( 0.0394737, 0.973864 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.282955 ), -7.59999, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=7]
-curve = SubResource( 6 )
-
-[sub_resource type="ParticlesMaterial" id=5]
-emission_shape = 2
-emission_box_extents = Vector3( 1, 1, 60 )
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, -90, 0 )
-angular_velocity = 35.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 25.58
-angle_curve = SubResource( 2 )
-scale = 12.63
-scale_random = 0.83
-scale_curve = SubResource( 7 )
-color_ramp = SubResource( 4 )
-
 [node name="Fire1" type="Node2D"]
 
-[node name="Particles2D" type="Particles2D" parent="."]
-process_material = SubResource( 5 )
+[node name="Particles2D" type="CPUParticles2D" parent="."]
+visible = false
+emitting = false
+emission_shape = 2
+emission_rect_extents = Vector2( 1, 1 )
+spread = 180.0
+gravity = Vector2( 0, -90 )
+angular_velocity = 35.0
+linear_accel = 25.58
+angle_curve = SubResource( 1 )
+scale_amount = 12.63
+scale_amount_random = 0.83
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+spread = 180.0
+gravity = Vector2( 0, -90 )
+linear_accel = 25.58
+angle_curve = SubResource( 1 )
+scale_amount = 12.63
+scale_amount_random = 0.83
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
