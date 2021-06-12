@@ -11,7 +11,6 @@ position = Vector2( -10, 0 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 4
-frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/Cerberus_Idle = ExtResource( 2 )

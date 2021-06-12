@@ -19,10 +19,10 @@ signal took_damage(damage, knockback, iframes)
 func _ready():
 	if InputMap.has_action(action_to_enable_control):
 		var event = InputMap.get_action_list(action_to_enable_control)[0]
-		$Label.text = OS.get_scancode_string(event.scancode)
-	else:
-		$Label.visible = false
-	pass # Replace with function body.
+		#$Label.text = OS.get_scancode_string(event.scancode)
+	#else:
+		#$Label.visible = false
+	#pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
