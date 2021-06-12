@@ -13,7 +13,7 @@ onready var health_counter = $CanvasLayer/HeartCounter
 export var health = 9 #TODO Make health not hardcoded
 var iframes = 0
 
-var cerberus_joined = true
+var cerberus_joined = true setget set_cerberus_joined
 var cerberus_has_joined_and_player_has_not_released_join_button = false
 
 export var cerberus_join_distance = 40
@@ -94,7 +94,7 @@ func join_cerberus(position):
 		remove_child(c)
 	add_child(cerberus)
 	cerberus.global_position = position
-	cerberus_joined = true
+	set_cerberus_joined(true)
 	cerberus_has_joined_and_player_has_not_released_join_button = true
 
 
@@ -107,7 +107,7 @@ func split_cerberus(position):
 		# add by 2pi/3
 		angle += 2.0944
 	remove_child(cerberus)
-	cerberus_joined = false
+	set_cerberus_joined(false)
 	cerberus_has_joined_and_player_has_not_released_join_button = true
 
 
@@ -117,3 +117,8 @@ func update_health(damage, knockback, _iframes):
 	health = max(0, health - damage)
 	iframes = _iframes
 	health_counter.set_health(health)
+
+
+func set_cerberus_joined(value):
+	cerberus_joined = value
+	
