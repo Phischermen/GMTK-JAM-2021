@@ -4,7 +4,7 @@ var control_enabled = true
 export var control_always_enabled = true
 #export var action_to_disable_control:String = ""
 var actions_that_disable_control_for_other_dogs = [] # Initialized via cerbus manager
-export var max_speed = 64.0
+export var max_speed = 640.0
 export var max_converge_speed = 640.0
 export var acceleration = 6.0
 

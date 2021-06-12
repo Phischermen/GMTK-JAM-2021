@@ -1,13 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Actors/SoloCerberus.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ArtAssests/characterSprites/cerberus/fire_spriteSheet.png" type="Texture" id=2]
+[ext_resource path="res://Actors/kahuna.gd" type="Script" id=3]
+[ext_resource path="res://FireBall_Projectile.tscn" type="PackedScene" id=4]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 91.8554
-height = 0.0
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
+resource_name = "Kahuna(Fire)_Idle"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -22,7 +21,8 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
+resource_name = "Kahuna(Fire)_Run"
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -38,10 +38,18 @@ tracks/0/keys = {
 "values": [ 4, 5, 6 ]
 }
 
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 23.247
+height = 0.0
+
 [sub_resource type="CircleShape2D" id=4]
 radius = 13.6735
 
-[node name="Cerberus" instance=ExtResource( 1 )]
+[node name="Kahuna" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+control_always_enabled = false
+max_converge_speed = 640.0
+fireball_Scene = ExtResource( 4 )
 
 [node name="ColorRect" parent="." index="0"]
 margin_left = -37.6117
@@ -52,23 +60,21 @@ margin_bottom = 44.4839
 [node name="Sprite" parent="." index="1"]
 visible = false
 
-[node name="CollisionShape2D" parent="." index="2"]
-position = Vector2( 0.374634, 13.8594 )
-scale = Vector2( 0.25, 0.25 )
-shape = SubResource( 1 )
-
-[node name="Kahuna" type="Sprite" parent="." index="3"]
+[node name="Kahuna" type="Sprite" parent="." index="2"]
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
-frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Kahuna" index="0"]
-anims/Kahuna(Fire)_Idle = SubResource( 2 )
-anims/Kahuna(Fire)_Run = SubResource( 3 )
+autoplay = "Kahuna(Fire)_Idle"
+anims/Kahuna(Fire)_Idle = SubResource( 1 )
+anims/Kahuna(Fire)_Run = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="3"]
+position = Vector2( 0.819992, 13.8867 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" parent="." index="4"]
-position = Vector2( 20.6017, -11.6119 )
-rotation = 0.0
+position = Vector2( 20.5815, -11.773 )
 shape = SubResource( 4 )
