@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://VFX/Lava_Shader.tres" type="Shader" id=1]
 [ext_resource path="res://Lava.png" type="Texture" id=2]
+[ext_resource path="res://VFX/Lava_Shader_Test.shader" type="Shader" id=3]
+[ext_resource path="res://VFX/lava_Floor.gd" type="Script" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 1 )
+shader = ExtResource( 3 )
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 1 )
@@ -12,10 +14,13 @@ shader = ExtResource( 1 )
 [sub_resource type="QuadMesh" id=3]
 material = SubResource( 2 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Lava" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 material = SubResource( 1 )
 scale = Vector2( 50, 50 )
 mesh = SubResource( 3 )
 texture = ExtResource( 2 )
+
+[connection signal="item_rect_changed" from="." to="." method="_on_Lava_item_rect_changed"]
