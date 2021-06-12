@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://HealthCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Actors/Laguna.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Actors/SoloCerberus.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Actors/Kahuna.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Jack.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Camera.tscn" type="PackedScene" id=7]
+
 
 [node name="CerberusManager" type="Node2D"]
 position = Vector2( 348.68, 250.142 )
@@ -27,6 +29,13 @@ position = Vector2( 0, 0 )
 scale = Vector2( 2, 2 )
 push = 200
 
+[node name="Camera2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 511.225, 293.691 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeartCounter" parent="CanvasLayer" instance=ExtResource( 1 )]
+margin_left = -0.8909
+margin_top = -2.6727
+margin_right = -0.890869
+margin_bottom = -2.67273

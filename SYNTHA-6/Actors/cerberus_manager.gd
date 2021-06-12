@@ -7,6 +7,8 @@ onready var solo_cerberus = [jack, kahuna, laguna]
 
 onready var cerberus = $Cerberus
 
+onready var camera_controller = $Camera2D
+
 onready var health_counter = $CanvasLayer/HeartCounter
 export var health = 9 #TODO Make health not hardcoded
 var iframes = 0
@@ -23,6 +25,13 @@ var action_that_enables_disabled_dog = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#Initialize camera controller
+	camera_controller.jack = jack
+	camera_controller.kahuna = kahuna
+	camera_controller.laguna = laguna
+	camera_controller.solo_cerberus = solo_cerberus
+	camera_controller.cerberus = cerberus
+	
 	# Initialize health
 	health_counter.set_max_health(health)
 	# Initialize joined
@@ -113,4 +122,4 @@ func update_health(damage, knockback, _iframes):
 
 func set_cerberus_joined(value):
 	cerberus_joined = value
-	
+	camera_controller.merged = value
