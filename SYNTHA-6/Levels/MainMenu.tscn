@@ -8,15 +8,13 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -31.5
-margin_top = 63.0
-margin_right = 31.5
-rect_scale = Vector2( 3.50781, 2.64347 )
-alignment = 1
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 2.52268
+margin_top = -212.248
+margin_right = 65.5227
+margin_bottom = -120.248
+rect_scale = Vector2( 3.50781, 2.28347 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,3 +35,9 @@ margin_top = 48.0
 margin_right = 63.0
 margin_bottom = 68.0
 text = "Quit"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 63.0
+margin_bottom = 92.0
+text = "Credits"
