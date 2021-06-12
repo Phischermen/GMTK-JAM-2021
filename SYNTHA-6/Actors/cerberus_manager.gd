@@ -11,14 +11,14 @@ onready var health_counter = $CanvasLayer/HeartCounter
 export var health = 9 #TODO Make health not hardcoded
 var iframes = 0
 
-var cerberus_joined = true
+var cerberus_joined = true setget set_cerberus_joined
 var cerberus_has_joined_and_player_has_not_released_join_button = false
 
 export var cerberus_join_distance = 40
 export var dog_distance_from_split_origin = 50
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
+var dog_with_disabled_controls = null
+var action_that_enables_disabled_dog = ""
 
 
 # Called when the node enters the scene tree for the first time.
@@ -30,13 +30,27 @@ func _ready():
 		remove_child(c)
 	for d in get_tree().get_nodes_in_group("Dog"):
 		d.connect("took_damage", self, "update_health")
-	# Setup controls that disable cerbus
-	jack.actions_that_enable_control_for_other_dogs = [jack.action_to_enable_control, laguna.action_to_enable_control, kahuna.action_to_enable_control]
-	laguna.actions_that_enable_control_for_other_dogs = jack.actions_that_enable_control_for_other_dogs
-	kahuna.actions_that_enable_control_for_other_dogs = jack.actions_that_enable_control_for_other_dogs
+
+
+func check_input_for_disabling_dog(action, dog):
+	if Input.is_action_just_pressed(action):
+		dog.control_enabled = false
+		dog_with_disabled_controls = dog
+		action_that_enables_disabled_dog = action
 
 
 func _process(delta):
+	# Set the status of each dog's control
+	if dog_with_disabled_controls == null:
+		# All dogs have their controls enabled.
+		check_input_for_disabling_dog("jack_enable", jack)
+		check_input_for_disabling_dog("kahuna_enable", kahuna)
+		check_input_for_disabling_dog("laguna_enable", laguna)
+	else:
+		# One dog has it's control disabled
+		if Input.is_action_pressed(action_that_enables_disabled_dog) == false:
+			dog_with_disabled_controls.control_enabled = true
+			dog_with_disabled_controls = null
 	# Iframes
 	iframes = max(0, iframes - 1)
 	visible = (iframes % 2) == 0
@@ -72,7 +86,7 @@ func join_cerberus(position):
 		remove_child(c)
 	add_child(cerberus)
 	cerberus.global_position = position
-	cerberus_joined = true
+	set_cerberus_joined(true)
 	cerberus_has_joined_and_player_has_not_released_join_button = true
 
 
@@ -85,7 +99,7 @@ func split_cerberus(position):
 		# add by 2pi/3
 		angle += 2.0944
 	remove_child(cerberus)
-	cerberus_joined = false
+	set_cerberus_joined(false)
 	cerberus_has_joined_and_player_has_not_released_join_button = true
 
 
@@ -95,3 +109,8 @@ func update_health(damage, knockback, _iframes):
 	health = max(0, health - damage)
 	iframes = _iframes
 	health_counter.set_health(health)
+
+
+func set_cerberus_joined(value):
+	cerberus_joined = value
+	
