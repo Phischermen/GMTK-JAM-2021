@@ -17,6 +17,8 @@ func _ready():
 func set_max_health(amount):
 	for child in $HBoxContainer.get_children():
 		child.queue_free()
+	for i in range(amount):
+		$HBoxContainer.add_child(heart.duplicate())
 
 
 func set_health(amount):
