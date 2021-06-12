@@ -19,15 +19,11 @@ func _ready():
 func _on_StartButton_pressed():
 	get_tree().change_scene("res://Levels/Gameplay_Level 1.tscn") 
 
-
 func _on_LevelButton_pressed():
 	get_tree().change_scene("res://Levels/LevelsMenu.tscn")
 
-
 func _on_QuitButton_pressed():
 	get_tree().quit()
-
-
 
 func _on_CreditButton_pressed():
 	get_tree().change_scene("res://Levels/Credits.tscn")
