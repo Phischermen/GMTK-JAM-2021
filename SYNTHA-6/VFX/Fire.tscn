@@ -1,15 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fireball.png" type="Texture" id=1]
 
 [sub_resource type="Curve" id=1]
 min_value = -360.0
 max_value = 360.0
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 1 ), 0.0, 587.504, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="Curve" id=2]
-_data = [ Vector2( 0.0394737, 0.973864 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.282955 ), -7.59999, 0.0, 0, 0 ]
+_data = [ Vector2( 0.0116279, 0.984091 ), 0.0, 0.800887, 0, 0, Vector2( 1, 0.282955 ), -2.35941, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=3]
-colors = PoolColorArray( 0.972168, 0.797404, 0.421526, 1, 1, 0.28125, 0.28125, 1 )
+offsets = PoolRealArray( 0, 0.704698, 1 )
+colors = PoolColorArray( 0.972168, 0.797404, 0.421526, 1, 0.980469, 0.0651093, 0.0651093, 1, 0.0546875, 0.00875854, 0.00875854, 1 )
+
+[sub_resource type="Curve" id=4]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 0.818176 ), 0.0, -37.2787, 0, 0, Vector2( 1, -5.72726 ), -187.636, 0.0, 0, 0 ]
 
 [node name="Fire1" type="Node2D"]
 
@@ -29,11 +37,12 @@ scale_amount_curve = SubResource( 2 )
 color_ramp = SubResource( 3 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture = ExtResource( 1 )
 spread = 180.0
 gravity = Vector2( 0, -90 )
-linear_accel = 25.58
-angle_curve = SubResource( 1 )
-scale_amount = 12.63
-scale_amount_random = 0.83
+linear_accel = 47.09
+angle_curve = SubResource( 4 )
+scale_amount = 0.0
+scale_amount_random = 0.19
 scale_amount_curve = SubResource( 2 )
 color_ramp = SubResource( 3 )
