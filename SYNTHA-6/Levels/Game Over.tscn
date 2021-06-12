@@ -5,10 +5,10 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="HomeButton" type="Button" parent="."]
-margin_left = 747.666
-margin_top = 517.493
-margin_right = 821.666
-margin_bottom = 537.493
+margin_left = 655.533
+margin_top = 421.464
+margin_right = 743.533
+margin_bottom = 454.464
 rect_scale = Vector2( 3.67481, 3.97262 )
 text = "Try again?"
 __meta__ = {
