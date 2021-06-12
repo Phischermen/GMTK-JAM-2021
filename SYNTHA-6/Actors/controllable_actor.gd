@@ -44,6 +44,7 @@ func _physics_process(delta):
 	#push objects
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
-		collision.collider.apply_central_impulse(-collision.normal * push)
+		if collision.collider is RigidBody:
+			collision.collider.apply_central_impulse(-collision.normal * push)
 
 
