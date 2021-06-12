@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Dumb",
+"language": "GDScript",
+"path": "res://Dumb_Enemy.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemy.gd"
+} ]
+_global_script_class_icons={
+"Dumb": "",
+"Enemy": ""
+}
+
 [application]
 
 config/name="SYNTHA-6"
