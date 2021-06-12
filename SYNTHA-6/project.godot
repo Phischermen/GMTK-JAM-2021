@@ -18,16 +18,22 @@ _global_script_classes=[ {
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://Enemy.gd"
+}, {
+"base": "Timer",
+"class": "QueueFreeTimer",
+"language": "GDScript",
+"path": "res://QueueFreeTimer.gd"
 } ]
 _global_script_class_icons={
 "Dumb": "",
-"Enemy": ""
+"Enemy": "",
+"QueueFreeTimer": ""
 }
 
 [application]
 
 config/name="SYNTHA-6"
-run/main_scene="res://CerbusTest.tscn"
+run/main_scene="res://Levels/Gameplay_Level 2.tscn"
 config/icon="res://icon.png"
 
 [display]

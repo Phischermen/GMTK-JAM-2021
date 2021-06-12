@@ -4,9 +4,10 @@
 [ext_resource path="res://Actors/CerberusManager.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 217.379, 139.871 )
 
 [node name="CerberusManager" parent="." instance=ExtResource( 2 )]
 position = Vector2( 155.493, 128.846 )
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 294.462, 90.3544 )
+position = Vector2( 453.042, 54.7184 )
