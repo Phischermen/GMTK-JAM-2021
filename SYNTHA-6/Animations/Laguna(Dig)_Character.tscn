@@ -1,8 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ArtAssests/characterSprites/cerberus/diggy_spriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Animations/Laguna(Dig)_Idle.tres" type="Animation" id=2]
 [ext_resource path="res://Animations/Laguna(Dig)_Run.tres" type="Animation" id=3]
+[ext_resource path="res://Animations/Laguna(Dig)_Digging.tres" type="Animation" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Laguna(Dig)_Underground"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 13, 14 ]
+}
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
@@ -10,8 +28,10 @@
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 4
-frame = 5
+frame = 13
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/Laguna(Dig)_Digging = ExtResource( 4 )
 anims/Laguna(Dig)_Idle = ExtResource( 2 )
 anims/Laguna(Dig)_Run = ExtResource( 3 )
+anims/Laguna(Dig)_Underground = SubResource( 1 )
