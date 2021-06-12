@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ArtAssests/UI & Menu Art/EscapeFromTheWashBasin_Title_V2.png" type="Texture" id=1]
 [ext_resource path="res://Temp Assets (Delete Later)/hover button.png" type="Texture" id=2]
@@ -7,65 +7,6 @@
 [ext_resource path="res://Temp Assets (Delete Later)/quit button.png" type="Texture" id=5]
 [ext_resource path="res://Temp Assets (Delete Later)/credit button.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Main Menu.gd" type="Script" id=7]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends TextureButton
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends TextureButton
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-func _on_CreditButton_pressed():
-	get_tree().change_scene(\"res://Levels/Credits.tscn\")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends TextureButton
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-func _on_QuitButton_pressed():
-	get_tree().quit()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
 
 [node name="Main Menu" type="Control"]
 anchor_right = 1.0
@@ -107,7 +48,6 @@ margin_bottom = 172.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 2 )
-script = SubResource( 1 )
 
 [node name="CreditButton" type="TextureButton" parent="MenuContainer"]
 margin_top = 176.0
@@ -116,7 +56,6 @@ margin_bottom = 260.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 2 )
-script = SubResource( 2 )
 
 [node name="QuitButton" type="TextureButton" parent="MenuContainer"]
 margin_top = 264.0
@@ -125,7 +64,6 @@ margin_bottom = 348.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 2 )
-script = SubResource( 3 )
 
 [connection signal="pressed" from="MenuContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="MenuContainer/LevelButton" to="." method="_on_LevelButton_pressed"]
