@@ -1,0 +1,37 @@
+[gd_scene format=2]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 4.20166
+margin_top = -186.404
+margin_right = 67.2017
+margin_bottom = -118.404
+rect_scale = Vector2( 3.50781, 2.64347 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+margin_right = 63.0
+margin_bottom = 20.0
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 63.0
+margin_bottom = 44.0
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 63.0
+margin_bottom = 68.0
+text = "Quit"
