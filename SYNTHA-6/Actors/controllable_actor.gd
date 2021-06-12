@@ -12,7 +12,7 @@ var velocity:Vector2 = Vector2.ZERO
 var move_velocity:Vector2 = Vector2.ZERO
 var attraction_velocity = Vector2.ZERO
 
-signal took_damage
+signal took_damage(damage, knockback, iframes)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,5 +51,5 @@ func _physics_process(delta):
 func recieve_damage(damage, knockback, iframes):
 	# TODO handle knock back
 	# TODO Send damage and iframe data through signal.
-	emit_signal("took_damage")
+	emit_signal("took_damage", damage, knockback, iframes)
 	

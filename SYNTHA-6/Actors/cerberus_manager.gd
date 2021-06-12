@@ -8,6 +8,8 @@ onready var solo_cerberus = [jack, kahuna, laguna]
 onready var cerberus = $Cerberus
 
 onready var health_counter = $CanvasLayer/HeartCounter
+var health = 9 #TODO Make health not hardcoded
+var iframes = 0
 
 var cerberus_joined = true
 var cerberus_has_joined_and_player_has_not_released_join_button = false
@@ -30,7 +32,10 @@ func _ready():
 
 
 func _process(delta):
-	# Determine average_position
+	# Iframes
+	iframes = max(0, iframes - 1)
+	visible = iframes % 2
+	# Get conjoin position
 	var target_conjoin_point = Vector2.ZERO
 	var one_cerbus_is_not_close_enough = false
 	if cerberus_joined == false:
@@ -80,5 +85,9 @@ func split_cerberus(position):
 	cerberus_has_joined_and_player_has_not_released_join_button = true
 
 
-func update_health():
-	health_counter.set_health()
+func update_health(damage, knockback, _iframes):
+	if iframes >= 0:
+		return
+	health = max(0, health - damage)
+	iframes = _iframes
+	health_counter.set_health(health)
