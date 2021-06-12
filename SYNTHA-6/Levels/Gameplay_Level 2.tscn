@@ -1,7 +1,44 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://ArtAssests/groundTiles/hellTurf.png" type="Texture" id=1]
 [ext_resource path="res://Actors/CerberusManager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/wall_block.tscn" type="PackedScene" id=4]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 64, 128, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 64, 128, 0, 128, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 0, 0, 64, 0, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 64, 0, 64, 64, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 128, 128, 64, 128, 128, 64, 128, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 64, 0, 128, 0, 128, 128, 64, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 64, 0, 128, 0, 128, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 128, 0, 128, 0, 64, 64, 64, 64, 0, 128, 0, 128, 128, 0, 128, 0, 64, 64, 64, 64, 0, 128, 0, 128, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 128, 64, 128, 64, 128, 128, 0, 128, 0, 0, 64, 0, 64, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 64, 128, 64, 128, 0, 128, 0, 0, 128, 0, 128, 64, 64, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 0, 0, 128, 0, 128, 128, 64, 128, 64, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=1]
 1/name = "hellTurf.png 1"
@@ -23,9 +60,82 @@
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 2 )
 1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
 
 [node name="Node2D3" type="Node2D"]
@@ -48,3 +158,41 @@ tile_data = PoolIntArray( 3, 1, 0, 4, 1, 1, 5, 1, 1, 6, 1, 1, 7, 1, 1, 8, 1, 1, 
 
 [node name="CerberusManager" parent="." instance=ExtResource( 2 )]
 position = Vector2( 172.503, 167.116 )
+
+[node name="Wall_Group" type="Node2D" parent="."]
+
+[node name="wall_block" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( 32, 352 )
+
+[node name="wall_block2" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( 96, 352 )
+
+[node name="wall_block3" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( -32, 352 )
+
+[node name="wall_block4" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( -32, 416 )
+
+[node name="wall_block5" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( -32, 480 )
+
+[node name="wall_block6" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( -32, 544 )
+
+[node name="wall_block7" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( -32, 608 )
+
+[node name="wall_block8" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( -32, 672 )
+
+[node name="wall_block9" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( -32, 736 )
+
+[node name="wall_block10" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( -32, 800 )
+
+[node name="wall_block11" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( 32, 800 )
+
+[node name="wall_block12" parent="Wall_Group" instance=ExtResource( 4 )]
+position = Vector2( 96, 800 )

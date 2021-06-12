@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Pause.gd" type="Script" id=1]
-[ext_resource path="res://Temp Assets (Delete Later)/hover button.png" type="Texture" id=2]
-[ext_resource path="res://Temp Assets (Delete Later)/start button.png" type="Texture" id=3]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Unpressed_Restart.png" type="Texture" id=2]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Hover__Restart.png" type="Texture" id=3]
 [ext_resource path="res://Levels/VBoxContainer.gd" type="Script" id=4]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__PressedDown_Resume.png" type="Texture" id=5]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Hover_Resume.png" type="Texture" id=6]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Unpressed_Resume.png" type="Texture" id=7]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__PressedDown_MainMenu.png" type="Texture" id=8]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Hover_MainMenu.png" type="Texture" id=9]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Unpressed_MainMenu.png" type="Texture" id=10]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Unpressed_Quit.png" type="Texture" id=11]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__PressedDown_Quit.png" type="Texture" id=12]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Hover_Quit.png" type="Texture" id=13]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__PressedDown_Restart.png" type="Texture" id=14]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 layer = -1
@@ -44,47 +54,47 @@ __meta__ = {
 
 [node name="ResumeButton" type="TextureButton" parent="Pause/VBoxContainer"]
 margin_right = 485.0
-margin_bottom = 84.0
+margin_bottom = 85.0
 rect_pivot_offset = Vector2( -547.483, -40.6058 )
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 2 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RestartButton" type="TextureButton" parent="Pause/VBoxContainer"]
-margin_top = 88.0
+margin_top = 89.0
 margin_right = 485.0
-margin_bottom = 172.0
+margin_bottom = 174.0
 rect_pivot_offset = Vector2( -547.483, -40.6058 )
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 2 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MainMenuButton" type="TextureButton" parent="Pause/VBoxContainer"]
-margin_top = 176.0
+margin_top = 178.0
 margin_right = 485.0
-margin_bottom = 260.0
+margin_bottom = 263.0
 rect_pivot_offset = Vector2( -547.483, -40.6058 )
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 2 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="QuitButton" type="TextureButton" parent="Pause/VBoxContainer"]
-margin_top = 264.0
+margin_top = 267.0
 margin_right = 485.0
-margin_bottom = 348.0
+margin_bottom = 352.0
 rect_pivot_offset = Vector2( -547.483, -40.6058 )
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 2 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
