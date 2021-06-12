@@ -7,6 +7,8 @@ onready var solo_cerberus = [jack, kahuna, laguna]
 
 onready var cerberus = $Cerberus
 
+onready var health_counter = $CanvasLayer/HeartCounter
+
 var cerberus_joined = true
 var cerberus_has_joined_and_player_has_not_released_join_button = false
 
@@ -22,6 +24,8 @@ func _ready():
 	# Initialize joined
 	for c in solo_cerberus:
 		remove_child(c)
+	for d in get_tree():
+		d.connect("took_damage", self, "update_health")
 	pass # Replace with function body.
 
 
@@ -74,3 +78,7 @@ func split_cerberus(position):
 	remove_child(cerberus)
 	cerberus_joined = false
 	cerberus_has_joined_and_player_has_not_released_join_button = true
+
+
+func update_health():
+	health_counter.set_health()

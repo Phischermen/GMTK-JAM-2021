@@ -6,11 +6,13 @@ export var max_speed = 64.0
 export var max_converge_speed = 640.0
 export var acceleration = 6.0
 
-export (int, 0, 200) var push = 100
+export (int, 0, 500) var push = 100
 
 var velocity:Vector2 = Vector2.ZERO
 var move_velocity:Vector2 = Vector2.ZERO
 var attraction_velocity = Vector2.ZERO
+
+signal took_damage
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,4 +48,8 @@ func _physics_process(delta):
 		var collision = get_slide_collision(index)
 		collision.collider.apply_central_impulse(-collision.normal * push)
 
-
+func recieve_damage(damage, knockback, iframes):
+	# TODO handle knock back
+	# TODO Send damage and iframe data through signal.
+	emit_signal("took_damage")
+	
