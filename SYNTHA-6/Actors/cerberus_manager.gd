@@ -47,6 +47,7 @@ func check_input_for_disabling_dog(action, dog):
 		dog.control_enabled = false
 		dog_with_disabled_controls = dog
 		action_that_enables_disabled_dog = action
+		stay_HUD.update_hud(dog.name)
 
 
 func _process(delta):
@@ -61,6 +62,7 @@ func _process(delta):
 		if Input.is_action_pressed(action_that_enables_disabled_dog) == false:
 			dog_with_disabled_controls.control_enabled = true
 			dog_with_disabled_controls = null
+			stay_HUD.update_hud("None")
 	# Iframes
 	iframes = max(0, iframes - 1)
 	visible = (iframes % 2) == 0
