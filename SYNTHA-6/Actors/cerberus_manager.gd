@@ -35,10 +35,10 @@ func _ready():
 	# Initialize health
 	health_counter.set_max_health(health)
 	# Initialize joined
-	for c in solo_cerberus:
-		remove_child(c)
 	for d in get_tree().get_nodes_in_group("Dog"):
 		d.connect("took_damage", self, "update_health")
+	for c in solo_cerberus:
+		remove_child(c)
 
 
 func check_input_for_disabling_dog(action, dog):
@@ -113,7 +113,7 @@ func split_cerberus(position):
 
 
 func update_health(damage, knockback, _iframes):
-	if iframes >= 0:
+	if iframes > 0:
 		return
 	health = max(0, health - damage)
 	iframes = _iframes
