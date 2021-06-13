@@ -103,13 +103,11 @@ func join_cerberus(position):
 
 
 func split_cerberus(position):
-	var angle = 0
 	for c in solo_cerberus:
 		add_child(c)
-		#set dog position
-		c.position = position + Vector2(dog_distance_from_split_origin * cos(angle), dog_distance_from_split_origin * sin(angle))
-		# add by 2pi/3
-		angle += 2.0944
+	kahuna.position = position + Vector2(40, 0)
+	jack.position = position + Vector2(-40, 40)
+	laguna.position = position + Vector2(-40, -40)
 	remove_child(cerberus)
 	set_cerberus_joined(false)
 	cerberus_has_joined_and_player_has_not_released_join_button = true
