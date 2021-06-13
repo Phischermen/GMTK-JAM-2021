@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="SYNTHA-6"
-run/main_scene="res://Levels/Gameplay_Level 1.tscn"
+run/main_scene="res://EnemyTest.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -112,6 +112,7 @@ ability_button={
 2d_physics/layer_3="Pushable"
 2d_physics/layer_4="Projectile"
 2d_physics/layer_5="Enemies"
+2d_physics/layer_6="Digger"
 
 [physics]
 

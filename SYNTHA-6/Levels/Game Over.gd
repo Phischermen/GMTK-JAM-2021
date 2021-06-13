@@ -1,6 +1,6 @@
 extends Node2D
 
-
+onready var click_sound = get_node("UI_Click")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_TryAgainButton_pressed():
+	click_sound.play()
 	get_tree().change_scene("res://Levels/Main Menu.tscn") 

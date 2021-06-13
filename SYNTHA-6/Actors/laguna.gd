@@ -24,6 +24,13 @@ func _process(delta):
 	if (Input.is_action_just_released("ability_button")):
 			# Go back to the surface if letting go of shift.
 			is_underground = false
+			# Unearth diggers
+			var someone_was_unearthed = false
+			for digger in $UnearthArea.get_overlapping_bodies():
+				digger.unearth()
+				someone_was_unearthed = true
+			if someone_was_unearthed:
+				recieve_damage(0, Vector2.ZERO, 60)
 			animation_player.play_backwards("Laguna(Dig)_Digging")
 			
 #    pass
