@@ -9,6 +9,9 @@ onready var l_walk = get_node("LagunaSprite/AnimationPlayer")
 onready var animation_player = $LagunaSprite/AnimationPlayer
 export var minimum_time_underground_to_trigger_unearth = 0.65
 
+onready var digging_up_sound = get_node("DiggingUpSound")
+onready var digging_down_sound = get_node("DiggingDownSound")
+
 var is_underground = false
 var time_underground = 0.0
 
@@ -36,8 +39,10 @@ func _process(delta):
 			if someone_was_unearthed:
 				recieve_damage(0, Vector2.ZERO, 60)
 			animation_player.play("Laguna(Dig)_Surfacing")
+			digging_up_sound.play()
 		else: 
 			animation_player.play_backwards("Laguna(Dig)_Digging")
+			digging_down_sound.play()
 		time_underground = 0
 		is_underground = false
 	if is_underground:

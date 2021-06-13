@@ -75,6 +75,7 @@ scale = Vector2( 0.444045, 0.444045 )
 frames = ExtResource( 5 )
 animation = "Walk"
 frame = 2
+flip_h = true
 
 [node name="AudioStreamPlayer2D" parent="." index="7"]
 stream = ExtResource( 2 )
