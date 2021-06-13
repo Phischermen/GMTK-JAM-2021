@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Dumb_Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SFX/goat_death.wav" type="AudioStream" id=2]
 [ext_resource path="res://Enemies/goat.gd" type="Script" id=3]
+[ext_resource path="res://ArtAssests/characterSprites/enemies/goat_bucket_spriteSheet.png" type="Texture" id=4]
+[ext_resource path="res://ArtAssests/characterSprites/enemies/goat_basic.tres" type="SpriteFrames" id=5]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Die"
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 35.6207
+height = 180.912
+
+[sub_resource type="Animation" id=2]
 length = 2.0
 tracks/0/type = "audio"
 tracks/0/path = NodePath("AudioStreamPlayer2D")
@@ -53,14 +58,27 @@ collision_mask = 27
 script = ExtResource( 3 )
 health = 1
 
-[node name="Area2D" parent="." index="3"]
-collision_layer = 0
-collision_mask = 2
+[node name="Sprite" parent="." index="0"]
+visible = false
+texture = ExtResource( 4 )
+hframes = 4
+vframes = 4
 
-[node name="AnimationPlayer" parent="." index="4"]
-anims/Die = SubResource( 1 )
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
 
-[node name="AudioStreamPlayer2D" parent="." index="5"]
+[node name="AnimationPlayer" parent="." index="5"]
+anims/Die = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="6"]
+scale = Vector2( 0.444045, 0.444045 )
+frames = ExtResource( 5 )
+animation = "Walk"
+frame = 2
+
+[node name="AudioStreamPlayer2D" parent="." index="7"]
 stream = ExtResource( 2 )
 
 [connection signal="enemy_died" from="." to="." method="_on_Goat_enemy_died"]
+[connection signal="player_lost" from="." to="." method="_on_Goat_player_lost"]
+[connection signal="player_spotted" from="." to="." method="_on_Goat_player_spotted"]

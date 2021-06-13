@@ -24,3 +24,13 @@ func _on_Goat_enemy_died():
 
 func disable_collision():
 	$CollisionShape2D.disabled = true
+
+
+func _on_Goat_player_lost():
+	$AnimatedSprite.play("Idle")
+	pass # Replace with function body.
+
+
+func _on_Goat_player_spotted():
+	$AnimatedSprite.play("Walk")
+	pass # Replace with function body.
