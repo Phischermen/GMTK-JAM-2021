@@ -39,8 +39,9 @@ tracks/0/keys = {
 "values": [ 4, 5, 6 ]
 }
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 39.478, 28.879, -11.493, 31.947, -11.712, -37.554, 17.722, -35.681 )
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 53.9658
+height = 11.6674
 
 [node name="Laguna" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -57,15 +58,12 @@ margin_bottom = 47.8551
 visible = false
 frame = 0
 
-[node name="CollisionShape2D" parent="." index="2"]
-disabled = true
-
-[node name="Laguna" type="Sprite" parent="." index="3"]
-scale = Vector2( 0.25, 0.25 )
+[node name="Laguna" type="Sprite" parent="." index="2"]
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
-frame = 12
+frame = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Laguna" index="0"]
 autoplay = "Laguna(Dig)_Idle"
@@ -74,10 +72,10 @@ anims/Laguna(Dig)_Idle = SubResource( 1 )
 anims/Laguna(Dig)_Run = SubResource( 2 )
 anims/Laguna(Dig)_Underground = ExtResource( 4 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="4"]
-position = Vector2( 4.36536, 2.3811 )
+[node name="Laguna_Hitbot" type="CollisionShape2D" parent="." index="3"]
+position = Vector2( 1.26895, 25.5027 )
 rotation = 1.5708
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D2" parent="." index="5"]
-disabled = true
+[node name="Cerberus_Hitbot" parent="." index="4"]
+visible = false

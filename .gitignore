@@ -6,3 +6,4 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
+ArtAssests/goat_enemy_1.psd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Actors/SoloCerberus.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ArtAssests/characterSprites/cerberus/strong_spriteSheet.png" type="Texture" id=2]
@@ -38,12 +38,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 24.5761
-height = 17.6027
-
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 11.9304
-height = 1.23587
+radius = 38.4032
+height = 42.0856
 
 [node name="Jack" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -60,20 +56,21 @@ margin_bottom = 37.6021
 visible = false
 
 [node name="JackSprite" type="Sprite" parent="." index="2"]
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="JackSprite" index="0"]
 autoplay = "Jack(Strong)_Idle"
 anims/Jack(Strong)_Idle = SubResource( 1 )
 anims/Jack(Strong)_Run = SubResource( 2 )
 
-[node name="CollisionShape2D" parent="." index="3"]
-position = Vector2( 2.89421, 9.34036 )
+[node name="Jack_Hitbot" type="CollisionShape2D" parent="." index="3"]
+position = Vector2( 0.420456, 7.14767 )
+rotation = 1.5708
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D2" parent="." index="4"]
-position = Vector2( 10.6056, -21.8366 )
-shape = SubResource( 4 )
+[node name="Cerberus_Hitbot" parent="." index="4"]
+visible = false

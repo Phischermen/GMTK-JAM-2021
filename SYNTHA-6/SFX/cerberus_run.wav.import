@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cerberus_run.wav-8d510e9c608d7d92924bda156c339c78.sample"
+
+[deps]
+
+source_file="res://SFX/cerberus_run.wav"
+dest_files=[ "res://.import/cerberus_run.wav-8d510e9c608d7d92924bda156c339c78.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
