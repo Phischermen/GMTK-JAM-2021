@@ -8,7 +8,7 @@ onready var click_sound = get_node("UI_Click")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	MusicController.play_music()
+	MusicController.play_main_music()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
