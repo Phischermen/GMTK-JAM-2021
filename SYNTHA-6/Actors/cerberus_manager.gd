@@ -8,6 +8,7 @@ onready var solo_cerberus = [jack, kahuna, laguna]
 onready var cerberus = $Cerberus
 
 onready var camera_controller = $Camera2D
+onready var stay_HUD = $CanvasLayer/StayHUD
 
 onready var health_counter = $CanvasLayer/HeartCounter
 export var health = 9 #TODO Make health not hardcoded
@@ -123,3 +124,4 @@ func update_health(damage, knockback, _iframes):
 func set_cerberus_joined(value):
 	cerberus_joined = value
 	camera_controller.merged = value
+	stay_HUD.is_merged = value
