@@ -11,6 +11,7 @@ export var acceleration = 6.0
 export (int, 0, 500) var push = 100
 
 onready var walk = get_node("Sprite/AnimationPlayer")
+onready var run_sound = get_node("Running")
 
 var velocity:Vector2 = Vector2.ZERO
 var move_velocity:Vector2 = Vector2.ZERO
@@ -44,6 +45,7 @@ func _physics_process(delta):
 		vinput = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		if Input.is_action_pressed("move_right"):
 			walk.play("Cerberus_Run")
+			
 			get_node("Sprite").set_flip_h(false)
 		
 		if Input.is_action_pressed("move_left"):
@@ -58,9 +60,21 @@ func _physics_process(delta):
 			
 		if Input.is_action_just_released("move_left") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_up") || Input.is_action_just_released("move_down"):
 			walk.play("Cerberus_Idle")
+			run_sound.stop()
 		
-		#else:
-			#walk.play("Cerberus_Idle")
+		#running sound effect implementation
+		if Input.is_action_just_pressed("move_right"):
+			run_sound.play()
+
+		elif Input.is_action_just_pressed("move_left"):
+			run_sound.play()
+			
+		elif Input.is_action_just_pressed("move_up"):
+			run_sound.play()
+
+		elif Input.is_action_just_pressed("move_down"):
+			run_sound.play()
+
 			
 	else:
 		#Control is not enabled

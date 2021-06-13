@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://SFX/cerberus_run.wav" type="AudioStream" id=1]
 [ext_resource path="res://Actors/controllable_actor.gd" type="Script" id=2]
 [ext_resource path="res://ArtAssests/characterSprites/cerberus/cerberus_spriteSheet.png" type="Texture" id=3]
 
@@ -74,3 +75,6 @@ anims/Cerberus_Run = SubResource( 2 )
 position = Vector2( -7.14761, 12.6134 )
 rotation = 1.5708
 shape = SubResource( 3 )
+
+[node name="Running" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
