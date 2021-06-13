@@ -63,7 +63,6 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
-frame = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Laguna" index="0"]
 autoplay = "Laguna(Dig)_Idle"

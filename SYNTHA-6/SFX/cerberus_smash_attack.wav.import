@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cerberus_smash_attack.wav-a26fa5a6af8720cb10d0248f130f5d55.sample"
+
+[deps]
+
+source_file="res://SFX/cerberus_smash_attack.wav"
+dest_files=[ "res://.import/cerberus_smash_attack.wav-a26fa5a6af8720cb10d0248f130f5d55.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
