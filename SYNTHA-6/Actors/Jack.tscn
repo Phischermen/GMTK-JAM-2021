@@ -52,7 +52,7 @@ margin_top = -42.3979
 margin_right = 43.1795
 margin_bottom = 37.6021
 
-[node name="Sprite" parent="." index="1"]
+[node name="CerberusSprite" parent="." index="1"]
 visible = false
 
 [node name="JackSprite" type="Sprite" parent="." index="2"]

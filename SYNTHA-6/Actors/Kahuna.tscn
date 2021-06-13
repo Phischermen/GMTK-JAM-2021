@@ -54,18 +54,17 @@ margin_top = -35.5161
 margin_right = 42.3883
 margin_bottom = 44.4839
 
-[node name="Sprite" parent="." index="1"]
+[node name="CerberusSprite" parent="." index="1"]
 visible = false
-frame = 5
 
-[node name="Kahuna" type="Sprite" parent="." index="2"]
+[node name="KahunaSprite" type="Sprite" parent="." index="2"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
 frame = 6
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Kahuna" index="0"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KahunaSprite" index="0"]
 autoplay = "Kahuna(Fire)_Idle"
 anims/Kahuna(Fire)_Idle = SubResource( 1 )
 anims/Kahuna(Fire)_Run = SubResource( 2 )
