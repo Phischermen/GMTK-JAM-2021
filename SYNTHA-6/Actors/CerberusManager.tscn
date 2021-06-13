@@ -1,12 +1,17 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://HealthCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Actors/Laguna.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/cerberus_manager.gd" type="Script" id=3]
 [ext_resource path="res://Actors/SoloCerberus.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Actors/Kahuna.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ArtAssests/UI/Stop_UI_2.png" type="Texture" id=6]
 [ext_resource path="res://Camera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ArtAssests/UI/Stop_UI_1.png" type="Texture" id=8]
 [ext_resource path="res://Actors/Jack.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ArtAssests/UI/Stop_UI_4.png" type="Texture" id=10]
+[ext_resource path="res://ArtAssests/UI/Stop_UI_3.png" type="Texture" id=11]
+[ext_resource path="res://Actors/StayHUD.gd" type="Script" id=12]
 
 [node name="CerberusManager" type="Node2D"]
 position = Vector2( 348.68, 250.142 )
@@ -38,3 +43,34 @@ margin_left = -0.8909
 margin_top = -2.6727
 margin_right = -0.890869
 margin_bottom = -2.67273
+
+[node name="StayHUD" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DefaultStay" type="Sprite" parent="CanvasLayer/StayHUD"]
+position = Vector2( 881.675, 459.817 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 8 )
+
+[node name="JackStay" type="Sprite" parent="CanvasLayer/StayHUD"]
+visible = false
+position = Vector2( 881.675, 459.817 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 6 )
+
+[node name="KahunaStay" type="Sprite" parent="CanvasLayer/StayHUD"]
+visible = false
+position = Vector2( 881.675, 459.817 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 11 )
+
+[node name="LagunaStay" type="Sprite" parent="CanvasLayer/StayHUD"]
+visible = false
+position = Vector2( 881.675, 459.817 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 10 )
