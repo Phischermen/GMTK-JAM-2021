@@ -12,7 +12,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
-		if Input.is_action_pressed("jack_enable") == false:
+		if control_enabled == true:
 			if Input.is_action_pressed("move_right"):
 				j_walk.play("Jack(Strong)_Run")
 				get_node("JackSprite").set_flip_h(false)
@@ -29,7 +29,8 @@ func _physics_process(delta):
 				
 			if Input.is_action_just_released("move_left") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_up") || Input.is_action_just_released("move_down"):
 				j_walk.play("Jack(Strong)_Idle")
-			
+		else:
+			j_walk.play("Jack(Strong)_Idle")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
