@@ -65,7 +65,6 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 hframes = 4
 vframes = 4
-frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/Cerberus_Idle = SubResource( 1 )

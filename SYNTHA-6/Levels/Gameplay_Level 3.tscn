@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Actors/CerberusManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ArtAssests/groundTiles/grassTurf.png" type="Texture" id=2]
 [ext_resource path="res://Enemies/Goat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GoalRing.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Good End.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 0, 128, 0, 128, 128, 0, 128, 128, 0, 128, 128, 0, 128, 128, 128 )
@@ -177,20 +179,24 @@ __meta__ = {
 [node name="CerberusManager" parent="." instance=ExtResource( 1 )]
 position = Vector2( 91.2692, 677.601 )
 
-[node name="Goat" parent="CerberusManager" instance=ExtResource( 3 )]
-position = Vector2( 1327.17, -288.846 )
+[node name="Goat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1418.44, 388.755 )
 
-[node name="Goat2" parent="CerberusManager" instance=ExtResource( 3 )]
-position = Vector2( 1331.41, -53.6452 )
+[node name="Goat2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1422.68, 623.956 )
 
-[node name="Goat3" parent="CerberusManager" instance=ExtResource( 3 )]
-position = Vector2( 1331.41, 170.961 )
+[node name="Goat3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1422.68, 848.562 )
 
-[node name="Goat4" parent="CerberusManager" instance=ExtResource( 3 )]
-position = Vector2( 1083.5, 175.199 )
+[node name="Goat4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1174.77, 852.8 )
 
-[node name="Goat5" parent="CerberusManager" instance=ExtResource( 3 )]
-position = Vector2( 1087.73, -57.8831 )
+[node name="Goat5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1179, 619.718 )
 
-[node name="Goat6" parent="CerberusManager" instance=ExtResource( 3 )]
-position = Vector2( 1089.85, -301.56 )
+[node name="Goat6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1181.12, 376.041 )
+
+[node name="GoalRing" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1874.01, 649.383 )
+next_scene = ExtResource( 5 )
