@@ -20,6 +20,8 @@ export var zoom_speed = 0.25
 
 onready var screen_size = get_viewport_rect().size
 
+func _ready():
+	zoom = Vector2(min_zoom, min_zoom)
 func _process (delta):
 	var p = Vector2.ZERO
 	

@@ -37,6 +37,7 @@ push = 200
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 511.225, 293.691 )
+min_zoom = 2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
