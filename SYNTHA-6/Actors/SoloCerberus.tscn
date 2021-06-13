@@ -60,14 +60,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="CerberusSprite" type="Sprite" parent="."]
 position = Vector2( -10, 0 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 hframes = 4
 vframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CerberusSprite"]
 anims/Cerberus_Idle = SubResource( 1 )
 anims/Cerberus_Run = SubResource( 2 )
 

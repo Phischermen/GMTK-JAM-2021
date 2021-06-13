@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Actors/SoloCerberus.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ArtAssests/characterSprites/cerberus/fire_spriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://Actors/kahuna.gd" type="Script" id=3]
 [ext_resource path="res://FireBall_Projectile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SFX/fireball.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Kahuna(Fire)_Idle"
@@ -54,18 +55,17 @@ margin_top = -35.5161
 margin_right = 42.3883
 margin_bottom = 44.4839
 
-[node name="Sprite" parent="." index="1"]
+[node name="CerberusSprite" parent="." index="1"]
 visible = false
-frame = 5
 
-[node name="Kahuna" type="Sprite" parent="." index="2"]
+[node name="KahunaSprite" type="Sprite" parent="." index="2"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
 frame = 6
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Kahuna" index="0"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KahunaSprite" index="0"]
 autoplay = "Kahuna(Fire)_Idle"
 anims/Kahuna(Fire)_Idle = SubResource( 1 )
 anims/Kahuna(Fire)_Run = SubResource( 2 )
@@ -77,3 +77,6 @@ shape = SubResource( 3 )
 
 [node name="Cerberus_Hitbot" parent="." index="4"]
 visible = false
+
+[node name="FireSound" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource( 5 )

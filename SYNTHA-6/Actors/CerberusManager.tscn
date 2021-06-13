@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://HealthCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Actors/Laguna.tscn" type="PackedScene" id=2]
@@ -12,10 +12,13 @@
 [ext_resource path="res://ArtAssests/UI/Stop_UI_4.png" type="Texture" id=10]
 [ext_resource path="res://ArtAssests/UI/Stop_UI_3.png" type="Texture" id=11]
 [ext_resource path="res://Actors/StayHUD.gd" type="Script" id=12]
+[ext_resource path="res://SFX/cerberus_took_damage.wav" type="AudioStream" id=13]
+[ext_resource path="res://Levels/Game Over.tscn" type="PackedScene" id=14]
 
 [node name="CerberusManager" type="Node2D"]
 position = Vector2( 348.68, 250.142 )
 script = ExtResource( 3 )
+game_over_scene = ExtResource( 14 )
 cerberus_join_distance = 70
 dog_distance_from_split_origin = 64
 
@@ -77,3 +80,6 @@ visible = false
 position = Vector2( 881.675, 459.817 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 10 )
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )

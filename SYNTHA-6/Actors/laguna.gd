@@ -4,10 +4,17 @@ extends "res://Actors/controllable_actor.gd"
 #onready var sprite = $Sprite
 #onready var original_texture = $Sprite.texture
 
-onready var l_walk = get_node("Laguna/AnimationPlayer")
+onready var l_walk = get_node("LagunaSprite/AnimationPlayer")
 
-onready var animation_player = $Laguna/AnimationPlayer
+onready var animation_player = $LagunaSprite/AnimationPlayer
+export var minimum_time_underground_to_trigger_unearth = 0.65
+
+onready var digging_up_sound = get_node("DiggingUpSound")
+onready var digging_down_sound = get_node("DiggingDownSound")
+
 var is_underground = false
+var time_underground = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(true)
@@ -21,9 +28,9 @@ func _process(delta):
 		# Go underground.
 		is_underground = true
 		animation_player.play("Laguna(Dig)_Digging")
-	if (Input.is_action_just_released("ability_button")):
-			# Go back to the surface if letting go of shift.
-			is_underground = false
+	if (Input.is_action_pressed("ability_button") == false) and is_underground == true:
+		# Go back to the surface if letting go of shift.
+		if time_underground > minimum_time_underground_to_trigger_unearth:
 			# Unearth diggers
 			var someone_was_unearthed = false
 			for digger in $UnearthArea.get_overlapping_bodies():
@@ -31,14 +38,21 @@ func _process(delta):
 				someone_was_unearthed = true
 			if someone_was_unearthed:
 				recieve_damage(0, Vector2.ZERO, 60)
+			animation_player.play("Laguna(Dig)_Surfacing")
+			digging_up_sound.play()
+		else: 
 			animation_player.play_backwards("Laguna(Dig)_Digging")
-			
+			digging_down_sound.play()
+		time_underground = 0
+		is_underground = false
+	if is_underground:
+		time_underground += delta
 #    pass
 
 func _physics_process(delta):
 	var walk_animation_to_play = ""
 	var idle_animation_to_play = ""
-	if control_enabled == true:
+	if control_enabled == true and (animation_player.current_animation != "Laguna(Dig)_Digging" and animation_player.current_animation != "Laguna(Dig)_Surfacing"):
 		if is_underground:
 			walk_animation_to_play = "Laguna(Dig)_Underground"
 			idle_animation_to_play = "Laguna(Dig)_Underground_Idle"
@@ -47,11 +61,11 @@ func _physics_process(delta):
 			idle_animation_to_play = "Laguna(Dig)_Idle"
 		if Input.is_action_pressed("move_right"):
 			l_walk.play(walk_animation_to_play)
-			get_node("Laguna").set_flip_h(false)
+			get_node("LagunaSprite").set_flip_h(false)
 		
 		if Input.is_action_pressed("move_left"):
 			l_walk.play(walk_animation_to_play)
-			get_node("Laguna").set_flip_h(true)
+			get_node("LagunaSprite").set_flip_h(true)
 			
 		if Input.is_action_pressed("move_up"):
 			l_walk.play(walk_animation_to_play)
