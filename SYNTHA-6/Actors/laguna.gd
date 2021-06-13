@@ -4,9 +4,9 @@ extends "res://Actors/controllable_actor.gd"
 #onready var sprite = $Sprite
 #onready var original_texture = $Sprite.texture
 
-onready var l_walk = get_node("Laguna/AnimationPlayer")
+onready var l_walk = get_node("LagunaSprite/AnimationPlayer")
 
-onready var animation_player = $Laguna/AnimationPlayer
+onready var animation_player = $LagunaSprite/AnimationPlayer
 export var minimum_time_underground_to_trigger_unearth = 0.65
 
 onready var digging_up_sound = get_node("DiggingUpSound")
@@ -61,11 +61,11 @@ func _physics_process(delta):
 			idle_animation_to_play = "Laguna(Dig)_Idle"
 		if Input.is_action_pressed("move_right"):
 			l_walk.play(walk_animation_to_play)
-			get_node("Laguna").set_flip_h(false)
+			get_node("LagunaSprite").set_flip_h(false)
 		
 		if Input.is_action_pressed("move_left"):
 			l_walk.play(walk_animation_to_play)
-			get_node("Laguna").set_flip_h(true)
+			get_node("LagunaSprite").set_flip_h(true)
 			
 		if Input.is_action_pressed("move_up"):
 			l_walk.play(walk_animation_to_play)

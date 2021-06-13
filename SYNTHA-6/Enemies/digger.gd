@@ -13,6 +13,8 @@ func unearth():
 	var inst = basic_goat_scene.instance()
 	get_parent().add_child(inst)
 	inst.position = position
+	for s in get_signal_connection_list("enemy_died"):
+		inst.connect(s["signal"], s["target"], s["method"])
 	inst.stun(1)
 	queue_free()
 

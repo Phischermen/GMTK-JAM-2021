@@ -1,5 +1,8 @@
 extends Node2D
 
+export var game_over_scene:PackedScene
+var dead = false
+
 onready var jack = $Jack 
 onready var kahuna = $Kahuna 
 onready var laguna = $Laguna
@@ -118,12 +121,32 @@ func update_health(damage, knockback, _iframes):
 	if iframes > 0:
 		return
 	health = max(0, health - damage)
-	iframes = _iframes
-	health_counter.set_health(health)
-	hurt_sound.play()
+	if health == 0 && dead == false:
+		dead = true
+		kill_cerberus(cerberus)
+		for d in solo_cerberus:
+			kill_cerberus(d)
+		yield(get_tree().create_timer(2), "timeout")
+		get_tree().change_scene_to(game_over_scene)
+	else:
+		iframes = _iframes
+		health_counter.set_health(health)
+		hurt_sound.play()
 
 
 func set_cerberus_joined(value):
 	cerberus_joined = value
 	camera_controller.merged = value
 	stay_HUD.is_merged = value
+
+
+func kill_cerberus(dog):
+	# Set each dog's frame to the death frame and disable processing
+	var sprite = dog.get_node(dog.name+"Sprite")
+	if sprite != null:
+		sprite.frame = 3
+	dog.set_process(false)
+	dog.set_physics_process(false)
+	for child in dog.get_children():
+		child.set_process(false)
+		child.set_physics_process(false)
