@@ -36,10 +36,10 @@ func _ready():
 	# Initialize health
 	health_counter.set_max_health(health)
 	# Initialize joined
-	for c in solo_cerberus:
-		remove_child(c)
 	for d in get_tree().get_nodes_in_group("Dog"):
 		d.connect("took_damage", self, "update_health")
+	for c in solo_cerberus:
+		remove_child(c)
 
 
 func check_input_for_disabling_dog(action, dog):
@@ -47,6 +47,7 @@ func check_input_for_disabling_dog(action, dog):
 		dog.control_enabled = false
 		dog_with_disabled_controls = dog
 		action_that_enables_disabled_dog = action
+		stay_HUD.update_hud(dog.name)
 
 
 func _process(delta):
@@ -61,6 +62,7 @@ func _process(delta):
 		if Input.is_action_pressed(action_that_enables_disabled_dog) == false:
 			dog_with_disabled_controls.control_enabled = true
 			dog_with_disabled_controls = null
+			stay_HUD.update_hud("None")
 	# Iframes
 	iframes = max(0, iframes - 1)
 	visible = (iframes % 2) == 0
@@ -114,7 +116,7 @@ func split_cerberus(position):
 
 
 func update_health(damage, knockback, _iframes):
-	if iframes >= 0:
+	if iframes > 0:
 		return
 	health = max(0, health - damage)
 	iframes = _iframes

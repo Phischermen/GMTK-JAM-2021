@@ -23,19 +23,27 @@ func _physics_process(delta):
 	match state:
 		State.MOVING:
 			if player != null && player.is_inside_tree() == true:
-				velocity = global_position.direction_to(player.global_position) * dumbEnemySpeed * delta
+				velocity = global_position.direction_to(player.global_position) * dumbEnemySpeed
 			else:
 				velocity = Vector2.ZERO
 		State.DYING:
 			pass
-	velocity = move_and_collide(velocity)
+	velocity = move_and_slide(velocity)
+	#Check for collision with player
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider is KinematicBody2D:
+			if collision.collider.is_in_group("Dog"):
+				collision.collider.recieve_damage(1, -collision.normal, 60)
+				break
+
 
 func take_damage(amount:int):
 	health -= amount
 	if (health <= 0 && state != State.DYING):
 		state = State.DYING
 		emit_signal("enemy_died")
-		
+
 
 #checks for player if they are in Area2D and are in group Dog
 func _on_Area2D_body_entered(body):
