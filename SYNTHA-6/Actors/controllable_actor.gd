@@ -10,6 +10,8 @@ export var acceleration = 6.0
 
 export (int, 0, 500) var push = 100
 
+onready var walk = get_node("Sprite/AnimationPlayer")
+
 var velocity:Vector2 = Vector2.ZERO
 var move_velocity:Vector2 = Vector2.ZERO
 var attraction_velocity = Vector2.ZERO
@@ -18,6 +20,7 @@ signal took_damage(damage, knockback, iframes)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_process(true)
 #	if InputMap.has_action(action_to_disable_control):
 #		var event = InputMap.get_action_list(action_to_disable_control)[0]
 #		$Label.text = OS.get_scancode_string(event.scancode)
@@ -33,11 +36,32 @@ func _ready():
 func _physics_process(delta):
 	var hinput =  Input.get_action_strength("move_right") - Input.get_action_strength("move_left") 
 	var vinput = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-
+	
+	
 	if control_enabled == true || control_always_enabled:
 		# Control is enabled
 		hinput =  Input.get_action_strength("move_right") - Input.get_action_strength("move_left") 
 		vinput = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+		if Input.is_action_pressed("move_right"):
+			walk.play("Cerberus_Run")
+			get_node("Sprite").set_flip_h(false)
+		
+		if Input.is_action_pressed("move_left"):
+			walk.play("Cerberus_Run")
+			get_node("Sprite").set_flip_h(true)
+			
+		if Input.is_action_pressed("move_up"):
+			walk.play("Cerberus_Run")
+			
+		if Input.is_action_pressed("move_down"):
+			walk.play("Cerberus_Run")
+			
+		if Input.is_action_just_released("move_left") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_up") || Input.is_action_just_released("move_down"):
+			walk.play("Cerberus_Idle")
+		
+		#else:
+			#walk.play("Cerberus_Idle")
+			
 	else:
 		#Control is not enabled
 		hinput = 0
