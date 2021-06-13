@@ -20,10 +20,7 @@ func _physics_process(delta):
 
 func launch(direction):
 	# Make the fireball fly based on direction.
-	if Input.is_action_pressed("move_left"):
-		velocity = SHOOT_VELOCITY * Vector2(direction * -1)
-	elif Input.is_action_pressed("move_right"):
-		velocity = SHOOT_VELOCITY * Vector2(direction)
+	velocity = SHOOT_VELOCITY * direction
 	set_physics_process(true)
 
 func _on_impact(normal : Vector2, collided_entity):

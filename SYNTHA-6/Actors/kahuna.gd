@@ -18,11 +18,14 @@ func _process(delta):
 		var fireball = fireball_Scene.instance()
 		get_parent().add_child(fireball)
 		fireball.global_position = global_position
-		fireball.launch(Vector2.RIGHT)
+		if $Kahuna.flip_h:
+			fireball.launch(Vector2.LEFT)
+		else:
+			fireball.launch(Vector2.RIGHT)
 #	pass
 
 func _physics_process(delta):
-		if Input.is_action_pressed("kahuna_enable") == false:
+		if control_enabled == true:
 			if Input.is_action_pressed("move_right"):
 				k_walk.play("Kahuna(Fire)_Run")
 				get_node("Kahuna").set_flip_h(false)
@@ -39,4 +42,5 @@ func _physics_process(delta):
 				
 			if Input.is_action_just_released("move_left") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_up") || Input.is_action_just_released("move_down"):
 				k_walk.play("Kahuna(Fire)_Idle")
-			
+		else:
+			k_walk.play("Kahuna(Fire)_Idle")
