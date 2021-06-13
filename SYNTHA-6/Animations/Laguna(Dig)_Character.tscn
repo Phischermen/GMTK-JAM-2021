@@ -13,7 +13,7 @@
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 4
-frame = 12
+frame = 13
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/Laguna(Dig)_Digging = ExtResource( 4 )
