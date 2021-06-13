@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Actors/SoloCerberus.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ArtAssests/characterSprites/cerberus/fire_spriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://Actors/kahuna.gd" type="Script" id=3]
 [ext_resource path="res://FireBall_Projectile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SFX/fireball.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Kahuna(Fire)_Idle"
@@ -77,3 +78,6 @@ shape = SubResource( 3 )
 
 [node name="Cerberus_Hitbot" parent="." index="4"]
 visible = false
+
+[node name="FireSound" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource( 5 )
