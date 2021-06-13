@@ -4,6 +4,8 @@ extends "res://Actors/controllable_actor.gd"
 export var fireball_Scene : PackedScene
 
 onready var k_walk = get_node("Kahuna/AnimationPlayer")
+
+onready var fireball_sound = get_node("FireSound")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(true)
@@ -18,6 +20,7 @@ func _process(delta):
 		var fireball = fireball_Scene.instance()
 		get_parent().add_child(fireball)
 		fireball.global_position = global_position
+		fireball_sound.play()
 		if $Kahuna.flip_h:
 			fireball.launch(Vector2.LEFT)
 		else:
