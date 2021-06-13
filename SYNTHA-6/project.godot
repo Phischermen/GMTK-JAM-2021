@@ -36,6 +36,10 @@ config/name="EFTWB"
 run/main_scene="res://Levels/Main Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+MusicController="*res://Autoloads/MusicController.tscn"
+
 [display]
 
 window/size/resizable=false

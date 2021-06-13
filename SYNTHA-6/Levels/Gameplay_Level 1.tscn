@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ArtAssests/groundTiles/toughStoneTurf.png" type="Texture" id=1]
 [ext_resource path="res://Actors/CerberusManager.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Levels/Gameplay_Level 2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Lava.png" type="Texture" id=8]
 [ext_resource path="res://SFX/bubbling_lava_ambience.wav" type="AudioStream" id=9]
+[ext_resource path="res://ArtAssests/UI & Menu Art/Tutorial.png" type="Texture" id=10]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -117,17 +118,6 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 2048.0
-margin_bottom = 1200.0
-color = Color( 0.290196, 1, 0, 0.145098 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
 position = Vector2( 1113.08, 638.182 )
@@ -161,3 +151,25 @@ next_scene = ExtResource( 7 )
 [node name="LavaAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 108.35
+margin_top = 879.351
+margin_right = 419.35
+margin_bottom = 1184.35
+color = Color( 0, 0, 0, 0.145098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 115.839
+margin_top = 887.402
+margin_right = 415.839
+margin_bottom = 1187.4
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
