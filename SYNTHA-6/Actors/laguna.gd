@@ -14,12 +14,12 @@ func _ready():
 func _process(delta):
 	# Dig underground when we use the ability button.
 	if Input.is_action_just_pressed("ability_button"):
-		if is_underground:
-			# If already underground, revert back to surface.
+		# Go underground.
+		is_underground = true
+		animation_player.play("Laguna(Dig)_Digging")
+	if (Input.is_action_just_released("ability_button")):
+			# Go back to the surface if letting go of shift.
 			is_underground = false
 			animation_player.play_backwards("Laguna(Dig)_Digging")
-		else:
-			# Go underground.
-			is_underground = true
-			animation_player.play("Laguna(Dig)_Digging")
+			
 #	pass
