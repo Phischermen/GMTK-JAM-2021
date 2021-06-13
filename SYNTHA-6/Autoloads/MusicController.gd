@@ -1,7 +1,7 @@
 extends Node
 
 
-var main_music = load("res://Music/heavy.mp3")
+var main_music = load("res://Music/chase.mp3")
 
 var end_music = load("res://Music/gameplay1.mp3")
 

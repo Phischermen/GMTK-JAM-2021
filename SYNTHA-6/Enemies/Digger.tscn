@@ -6,7 +6,7 @@
 [ext_resource path="res://Enemies/Goat.tscn" type="PackedScene" id=4]
 
 [node name="Digger" instance=ExtResource( 1 )]
-collision_layer = 48
+collision_layer = 32
 collision_mask = 3
 script = ExtResource( 3 )
 basic_goat_scene = ExtResource( 4 )
