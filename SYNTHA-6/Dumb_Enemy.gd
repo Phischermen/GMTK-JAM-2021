@@ -39,7 +39,6 @@ func take_damage(amount:int):
 
 #checks for player if they are in Area2D and are in group Dog
 func _on_Area2D_body_entered(body):
-	print("detected")
 	if body != self and body.is_in_group("Dog"):
 		player = body
 

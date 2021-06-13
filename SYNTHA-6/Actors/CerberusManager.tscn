@@ -23,7 +23,9 @@ position = Vector2( 0, 0 )
 [node name="Laguna" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 0 )
 
-[node name="Cerberus" parent="." instance=ExtResource( 4 )]
+[node name="Cerberus" parent="." groups=[
+"Cerberus",
+] instance=ExtResource( 4 )]
 position = Vector2( 0, 0 )
 scale = Vector2( 2, 2 )
 push = 200
