@@ -3,7 +3,6 @@ extends KinematicBody2D
 const SHOOT_VELOCITY = Vector2(600, -300)
 
 var velocity = Vector2.ZERO
-var timer = 3
 
 func _ready():
 	#set_physics_process(false)
@@ -20,12 +19,11 @@ func _physics_process(delta):
 		_on_impact(collision.normal, collision.collider)
 
 func launch(direction):
-	#var scene = get_tree().current_scene
-	# Find direction we're facing when firing fireball.
-	# Detatch the fireball from player so they're not connected.
-	#get_parent().remove_child(self)
-	#scene.add_child(self)
-	velocity = SHOOT_VELOCITY * Vector2(direction)
+	# Make the fireball fly based on direction.
+	if Input.is_action_pressed("move_left"):
+		velocity = SHOOT_VELOCITY * Vector2(direction * -1)
+	elif Input.is_action_pressed("move_right"):
+		velocity = SHOOT_VELOCITY * Vector2(direction)
 	set_physics_process(true)
 
 func _on_impact(normal : Vector2, collided_entity):
