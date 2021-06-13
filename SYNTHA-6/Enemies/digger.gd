@@ -13,6 +13,7 @@ func unearth():
 	var inst = basic_goat_scene.instance()
 	get_parent().add_child(inst)
 	inst.position = position
+	inst.stun(1)
 	queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

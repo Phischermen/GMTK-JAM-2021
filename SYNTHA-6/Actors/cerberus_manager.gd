@@ -23,6 +23,7 @@ export var dog_distance_from_split_origin = 50
 var dog_with_disabled_controls = null
 var action_that_enables_disabled_dog = ""
 
+onready var hurt_sound = get_node("HurtSound")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -121,6 +122,7 @@ func update_health(damage, knockback, _iframes):
 	health = max(0, health - damage)
 	iframes = _iframes
 	health_counter.set_health(health)
+	hurt_sound.play()
 
 
 func set_cerberus_joined(value):
