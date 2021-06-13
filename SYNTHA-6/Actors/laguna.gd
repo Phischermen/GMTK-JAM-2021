@@ -29,7 +29,7 @@ func _process(delta):
 #    pass
 
 func _physics_process(delta):
-		if Input.is_action_pressed("laguna_enable") == false:
+		if control_enabled == true:
 			if Input.is_action_pressed("move_right"):
 				l_walk.play("Laguna(Dig)_Run")
 				get_node("Laguna").set_flip_h(false)
@@ -46,4 +46,5 @@ func _physics_process(delta):
 				
 			if Input.is_action_just_released("move_left") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_up") || Input.is_action_just_released("move_down"):
 				l_walk.play("Laguna(Dig)_Idle")
-			
+		else:
+			l_walk.play("Laguna(Dig)_Idle")
