@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/heavy.mp3-836c2ccf3bea0ac85fa523f3a53c557e.mp3str"
+
+[deps]
+
+source_file="res://Music/heavy.mp3"
+dest_files=[ "res://.import/heavy.mp3-836c2ccf3bea0ac85fa523f3a53c557e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
