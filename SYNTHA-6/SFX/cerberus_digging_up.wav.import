@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cerberus_digging_up.wav-142ee3f0920071ecb247eee61ff4ce73.sample"
+
+[deps]
+
+source_file="res://SFX/cerberus_digging_up.wav"
+dest_files=[ "res://.import/cerberus_digging_up.wav-142ee3f0920071ecb247eee61ff4ce73.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

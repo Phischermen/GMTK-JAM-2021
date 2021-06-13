@@ -36,22 +36,30 @@ func _process(delta):
 #    pass
 
 func _physics_process(delta):
-		if control_enabled == true:
-			if Input.is_action_pressed("move_right"):
-				l_walk.play("Laguna(Dig)_Run")
-				get_node("Laguna").set_flip_h(false)
-			
-			if Input.is_action_pressed("move_left"):
-				l_walk.play("Laguna(Dig)_Run")
-				get_node("Laguna").set_flip_h(true)
-				
-			if Input.is_action_pressed("move_up"):
-				l_walk.play("Laguna(Dig)_Run")
-				
-			if Input.is_action_pressed("move_down"):
-				l_walk.play("Laguna(Dig)_Run")
-				
-			if Input.is_action_just_released("move_left") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_up") || Input.is_action_just_released("move_down"):
-				l_walk.play("Laguna(Dig)_Idle")
+	var walk_animation_to_play = ""
+	var idle_animation_to_play = ""
+	if control_enabled == true:
+		if is_underground:
+			walk_animation_to_play = "Laguna(Dig)_Underground"
+			idle_animation_to_play = "Laguna(Dig)_Underground_Idle"
 		else:
-			l_walk.play("Laguna(Dig)_Idle")
+			walk_animation_to_play = "Laguna(Dig)_Run"
+			idle_animation_to_play = "Laguna(Dig)_Idle"
+		if Input.is_action_pressed("move_right"):
+			l_walk.play(walk_animation_to_play)
+			get_node("Laguna").set_flip_h(false)
+		
+		if Input.is_action_pressed("move_left"):
+			l_walk.play(walk_animation_to_play)
+			get_node("Laguna").set_flip_h(true)
+			
+		if Input.is_action_pressed("move_up"):
+			l_walk.play(walk_animation_to_play)
+			
+		if Input.is_action_pressed("move_down"):
+			l_walk.play(walk_animation_to_play)
+			
+		if Input.is_action_just_released("move_left") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_up") || Input.is_action_just_released("move_down"):
+			l_walk.play(idle_animation_to_play)
+	else:
+		l_walk.play(idle_animation_to_play)
