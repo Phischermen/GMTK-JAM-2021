@@ -3,9 +3,10 @@ extends "res://Actors/controllable_actor.gd"
 
 export var fireball_Scene : PackedScene
 
-
+onready var k_walk = get_node("Kahuna/AnimationPlayer")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_process(true)
 	pass # Replace with function body.
 
 
@@ -19,3 +20,23 @@ func _process(delta):
 		fireball.global_position = global_position
 		fireball.launch(Vector2.RIGHT)
 #	pass
+
+func _physics_process(delta):
+		if Input.is_action_pressed("kahuna_enable") == false:
+			if Input.is_action_pressed("move_right"):
+				k_walk.play("Kahuna(Fire)_Run")
+				get_node("Kahuna").set_flip_h(false)
+			
+			if Input.is_action_pressed("move_left"):
+				k_walk.play("Kahuna(Fire)_Run")
+				get_node("Kahuna").set_flip_h(true)
+				
+			if Input.is_action_pressed("move_up"):
+				k_walk.play("Kahuna(Fire)_Run")
+				
+			if Input.is_action_pressed("move_down"):
+				k_walk.play("Kahuna(Fire)_Run")
+				
+			if Input.is_action_just_released("move_left") || Input.is_action_just_released("move_right") || Input.is_action_just_released("move_up") || Input.is_action_just_released("move_down"):
+				k_walk.play("Kahuna(Fire)_Idle")
+			

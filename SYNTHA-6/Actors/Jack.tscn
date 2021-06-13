@@ -60,7 +60,6 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
-frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="JackSprite" index="0"]
 autoplay = "Jack(Strong)_Idle"
