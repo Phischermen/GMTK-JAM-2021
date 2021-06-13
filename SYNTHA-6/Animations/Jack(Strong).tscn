@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ArtAssests/characterSprites/cerberus/strong_spriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Animations/Jack(Strong)_Idle.tres" type="Animation" id=2]
 [ext_resource path="res://Animations/Jack(Strong)_Run.tres" type="Animation" id=3]
+[ext_resource path="res://Animations/Jack(Strong)_Pushing.tres" type="Animation" id=4]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
@@ -10,8 +11,9 @@
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 4
-frame = 4
+frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/Jack(Strong)_Idle = ExtResource( 2 )
+anims/Jack(Strong)_Pushing = ExtResource( 4 )
 anims/Jack(Strong)_Run = ExtResource( 3 )
