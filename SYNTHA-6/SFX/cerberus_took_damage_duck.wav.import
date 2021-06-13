@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cerberus_took_damage_duck.wav-715ee606daf14e7864b39479431aaca9.sample"
+
+[deps]
+
+source_file="res://SFX/cerberus_took_damage_duck.wav"
+dest_files=[ "res://.import/cerberus_took_damage_duck.wav-715ee606daf14e7864b39479431aaca9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
