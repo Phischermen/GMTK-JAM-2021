@@ -13,6 +13,7 @@ signal enemy_died
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("Enemy")
 	navigation_timer.start(navigation_timer.wait_time + rand_range(-1, 1))
 	update_path()
 

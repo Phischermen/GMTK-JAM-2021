@@ -16,7 +16,7 @@ func _physics_process(delta):
 	
 	# Test collision
 	if collision != null:
-		_on_impact(collision.normal)
+		_on_impact(collision.normal, collision.collider)
 
 func launch(direction):
 	#var scene = get_tree().current_scene
@@ -27,8 +27,9 @@ func launch(direction):
 	velocity = SHOOT_VELOCITY * Vector2(direction)
 	set_physics_process(true)
 
-func _on_impact(normal : Vector2):
+func _on_impact(normal : Vector2, collider):
 	velocity = velocity.bounce(normal)
 	# Slowly stop the bounce of the fire ball.
 	velocity *= 0.5
-	
+	if collider.has_method("take_damage"):
+		collider.take_damage(1)

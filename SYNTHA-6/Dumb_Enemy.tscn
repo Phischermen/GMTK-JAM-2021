@@ -25,6 +25,9 @@ shape = SubResource( 3 )
 [node name="NavigationTimer" type="Timer" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 0
+collision_mask = 2
 __meta__ = {
 "_editor_description_": "Detection area."
 }
