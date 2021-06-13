@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://ArtAssests/UI & Menu Art/EscapeFromTheWashBasin_Title_V2.png" type="Texture" id=1]
+[ext_resource path="res://ArtAssests/menuArt/titleScreen.png" type="Texture" id=1]
 [ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Hover_Levels.png" type="Texture" id=2]
 [ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__PressedDown_Start.png" type="Texture" id=3]
 [ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Unpressed_Levels.png" type="Texture" id=4]
@@ -15,6 +15,7 @@
 [ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__Unpressed_Credits.png" type="Texture" id=13]
 [ext_resource path="res://ArtAssests/UI & Menu Art/Buttons_/Buttons__PressedDown_Quit.png" type="Texture" id=14]
 [ext_resource path="res://SFX/ui_click.wav" type="AudioStream" id=15]
+[ext_resource path="res://ArtAssests/menuArt/EscapeFromTheWashBasin.png" type="Texture" id=16]
 
 [node name="Main Menu" type="Control"]
 anchor_right = 1.0
@@ -32,12 +33,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TitleText" type="TextureRect" parent="TitleArt"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 133.552
+margin_top = -2.38419e-07
+margin_right = 133.552
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MenuContainer" type="VBoxContainer" parent="."]
-margin_left = 700.123
-margin_top = 361.87
-margin_right = 1185.12
-margin_bottom = 715.133
-rect_scale = Vector2( 0.56, 0.64 )
+margin_left = 764.379
+margin_top = 398.408
+margin_right = 1249.38
+margin_bottom = 751.671
+rect_scale = Vector2( 0.509221, 0.509221 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

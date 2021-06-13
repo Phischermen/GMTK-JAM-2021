@@ -30,4 +30,4 @@ func _on_QuitButton_pressed():
 
 func _on_CreditButton_pressed():
 	click_sound.play()
-	get_tree().change_scene("res://Levels/Credits.tscn")
+	get_tree().change_scene("res://Levels/Good End.tscn")

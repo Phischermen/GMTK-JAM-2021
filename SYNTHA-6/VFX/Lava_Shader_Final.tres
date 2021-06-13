@@ -1,11 +1,34 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://VFX/Lava_Floor_Final.shader" type="Shader" id=1]
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+
+uniform vec2 tiled_factor = vec2(5.0,5.0);
+uniform float aspect_ratio = 0.5;
+
+uniform vec2 time_scale = vec2(1.0,1.0);
+uniform vec2 offset_scale = vec2(2.0,2.0);
+uniform vec2 amplitude = vec2(0.05, 0.1);
+
+void fragment(){
+	vec2 tiled_uvs = UV * tiled_factor;
+	tiled_uvs.y *= aspect_ratio;
+	
+	vec2 waves_uv_offset;
+	waves_uv_offset.x = cos(TIME * time_scale.x + (tiled_uvs.x + tiled_uvs.y) * offset_scale.x);
+	waves_uv_offset.y = sin(TIME * time_scale.y + (tiled_uvs.x + tiled_uvs.y) * offset_scale.y);
+	
+	
+	//COLOR = vec4(UV,0.0,1.0);
+	//COLOR = vec4(waves_uv_offset, 0.0,1.0);
+	COLOR = texture(TEXTURE, tiled_uvs + waves_uv_offset * amplitude);
+	
+}"
 
 [resource]
-shader = ExtResource( 1 )
-shader_param/tiled_factor = Vector2( 1, 2 )
+shader = SubResource( 4 )
+shader_param/tiled_factor = Vector2( 12, 14 )
 shader_param/aspect_ratio = 0.5
-shader_param/time_scale = Vector2( 1, 1 )
-shader_param/offset_scale = Vector2( 0.04, 0.05 )
-shader_param/amplitude = Vector2( 0.05, 0.2 )
+shader_param/time_scale = Vector2( 0.35, 0.35 )
+shader_param/offset_scale = Vector2( 0.35, 0.35 )
+shader_param/amplitude = Vector2( 0.1, 0.1 )
