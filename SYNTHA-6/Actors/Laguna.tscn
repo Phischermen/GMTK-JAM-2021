@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Actors/SoloCerberus.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ArtAssests/characterSprites/cerberus/diggy_spriteSheet.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Animations/Laguna(Dig)_Underground.tres" type="Animation" id=4]
 [ext_resource path="res://Animations/Laguna(Dig)_Digging.tres" type="Animation" id=5]
 [ext_resource path="res://Animations/Laguna(Dig)_Underground_Idle.tres" type="Animation" id=6]
+[ext_resource path="res://Animations/ActorsLaguna(Dig)_Surfacing.tres" type="Animation" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Laguna(Dig)_Idle"
@@ -40,11 +41,11 @@ tracks/0/keys = {
 "values": [ 4, 5, 6 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 53.9658
 height = 11.6674
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=5]
 radius = 338.727
 
 [node name="Laguna" instance=ExtResource( 1 )]
@@ -73,13 +74,14 @@ autoplay = "Laguna(Dig)_Idle"
 anims/Laguna(Dig)_Digging = ExtResource( 5 )
 anims/Laguna(Dig)_Idle = SubResource( 1 )
 anims/Laguna(Dig)_Run = SubResource( 2 )
+anims/Laguna(Dig)_Surfacing = ExtResource( 7 )
 anims/Laguna(Dig)_Underground = ExtResource( 4 )
 anims/Laguna(Dig)_Underground_Idle = ExtResource( 6 )
 
 [node name="Laguna_Hitbot" type="CollisionShape2D" parent="." index="3"]
 position = Vector2( 1.26895, 25.5027 )
 rotation = 1.5708
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Cerberus_Hitbot" parent="." index="4"]
 visible = false
@@ -91,4 +93,4 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnearthArea" index="0"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
