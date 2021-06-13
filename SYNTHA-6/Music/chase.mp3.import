@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/chase.mp3-77f520272c1f941881abe582ce684918.mp3str"
+
+[deps]
+
+source_file="res://Music/chase.mp3"
+dest_files=[ "res://.import/chase.mp3-77f520272c1f941881abe582ce684918.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
