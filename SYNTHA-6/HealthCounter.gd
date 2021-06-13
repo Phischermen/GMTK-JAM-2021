@@ -1,11 +1,12 @@
 extends Control
 
-
+export var healthyHeart : Texture
+export var damagedHeart : Texture
 onready var heart = $HBoxContainer/Heart1.duplicate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var amount = 5
+	var amount = 9
 	set_health(amount)
 	pass # Replace with function body.
 
@@ -25,11 +26,12 @@ func set_health(amount):
 	
 	# Set the color of the hearts.
 	for heart in $HBoxContainer.get_children():
-		heart.modulate = Color.crimson
+		heart.texture = healthyHeart
 		amount -= 1
 		if (amount >= 0):
 			# Set the filled in hearts.			
-			heart.modulate = Color.crimson
+			heart.texture = healthyHeart
 		else:
 			# Set the damaged hearts.
-			heart.modulate = Color(0.1875, 0.003676, 0)
+			heart.texture = damagedHeart
+			#heart.modulate = Color(0.1875, 0.003676, 0)
